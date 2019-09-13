@@ -46,8 +46,5 @@ namespace Menu.Entrees
         {
             this.onion = false;
         }
-
-
-
     }
 }

@@ -16,7 +16,9 @@ namespace Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Chicken Nugget" };
+                List<string> ingredients = new List<string>() { "Chicken Nugget", "Chicken Nugget",
+                                                                "Chicken Nugget", "Chicken Nugget",
+                                                                "Chicken Nugget", "Chicken Nugget"};
                 return ingredients;
             }
         }
@@ -31,6 +33,7 @@ namespace Menu.Entrees
         {
             this.Price += .25;
             this.Calories += 59;
+            Ingredients.Add("Chicken Nugget");
         }
 
     }
