@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     public class Brontowurst
     {
@@ -18,7 +18,8 @@ namespace Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Whole Wheat Bun" };
+                List<string> ingredients = new List<string>();
+                if (wholeWheatBun) ingredients.Add("Whole Wheat Bun");
                 if (brautwurst) ingredients.Add("Brautwurst");
                 if (peppers) ingredients.Add("Peppers");
                 if (onion) ingredients.Add("Onion");

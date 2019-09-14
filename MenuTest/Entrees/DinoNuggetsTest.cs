@@ -49,7 +49,7 @@ namespace MenuTest.Entrees
             }
             Assert.Equal<int>(7, nuggetCount);
             Assert.Equal<int>(7, dn.Ingredients.Count);
-
+            /*
             dn.AddNugget();
             // Should be 8 nuggets
             nuggetCount = 0;
@@ -59,6 +59,7 @@ namespace MenuTest.Entrees
             }
             Assert.Equal<int>(8, nuggetCount);
             Assert.Equal<int>(8, dn.Ingredients.Count);
+            */
 
         }
 

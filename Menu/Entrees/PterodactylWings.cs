@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
 
     public class PterodactylWings

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Entrees
+
+namespace DinoDiner.Menu.Entrees
 {
     public class TRexKingBurger
     {
@@ -39,7 +40,53 @@ Its price is **$8.45**, it contains **728 calories**, and its ingredients are: a
                 if (mustard) ingredients.Add("Mustard");
                 if (mayo) ingredients.Add("Mayo");
                 return ingredients;
-            }
+            }           
+        }
+
+        public TRexKingBurger()
+        {
+            this.Price = 8.45;
+            this.Calories = 728;
+        }
+
+        public void HoldBun()
+        {
+            this.bun = false;
+        }
+
+        public void HoldLettuce()
+        {
+            this.lettuce = false;
+        }
+
+        public void HoldTomato()
+        {
+            this.tomato = false;
+        }
+
+        public void HoldOnion()
+        {
+            this.onion = false;
+        }
+
+        public void HoldPickle()
+        {
+            this.pickle = false;
+        }
+
+        public void HoldKetchup()
+        {
+            this.ketchup = false;
+        }
+
+        public void HoldMustard()
+        {
+            this.mustard = false;
+        }
+
+        public void HoldMayo()
+        {
+            this.mayo = false;
         }
     }
 }

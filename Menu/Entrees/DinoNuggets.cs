@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Menu.Entrees
+namespace DinoDiner.Menu.Entrees
 {
     public class DinoNuggets
     {
-        private bool chicken = false;
-        private bool wingSauce = false;
+        public uint numNuggs = 6;        
+        List<string> ingredients = new List<string>() { "Chicken Nugget", "Chicken Nugget", "Chicken Nugget",
+                                                        "Chicken Nugget", "Chicken Nugget", "Chicken Nugget" };
 
         public double Price { get; set; }
         public uint Calories { get; set; }
@@ -16,24 +17,22 @@ namespace Menu.Entrees
         {
             get
             {
-                List<string> ingredients = new List<string>() { "Chicken Nugget", "Chicken Nugget",
-                                                                "Chicken Nugget", "Chicken Nugget",
-                                                                "Chicken Nugget", "Chicken Nugget"};
-                return ingredients;
+                return ingredients;            
             }
         }
 
         public DinoNuggets()
         {
             this.Price = 4.25;
-            this.Calories = 59 * 6;
+            this.Calories = 59 * numNuggs;
+            
         }
 
         public void AddNugget()
         {
             this.Price += .25;
             this.Calories += 59;
-            Ingredients.Add("Chicken Nugget");
+            ingredients.Add("Chicken Nugget");
         }
 
     }
