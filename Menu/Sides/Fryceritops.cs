@@ -36,9 +36,8 @@ namespace DinoDiner.Menu.Sides
 
         public Fryceritops()
         {
-            this.Price = 0.99;
-            this.Calories = 222;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegtable Oil" };
+            this.Size = Size.Small;
+            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         }
     }
 }
