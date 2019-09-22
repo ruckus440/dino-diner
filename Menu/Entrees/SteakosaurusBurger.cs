@@ -1,20 +1,36 @@
-﻿using System;
+﻿/* SteakosarusBurger.cs
+ * Author: Mike Ruckert
+ */
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    /// <summary>
+    /// Represents the Steakosaurus Burger.  Inherits from the Entree class.
+    /// </summary>
+    public class SteakosaurusBurger : Entree
     {
+        /// <summary>
+        /// Indicates whether the bun is included in Ingredients.
+        /// </summary>
         private bool bun = true;
+        /// <summary>
+        /// Indicates whether pickle is included in Ingredients.
+        /// </summary>
         private bool pickle = true;
+        /// <summary>
+        /// Indicates whether ketchup is included in Ingredients.
+        /// </summary>
         private bool ketchup = true;
+        /// <summary>
+        /// Indicates whether mustard is included in Ingredients.
+        /// </summary>
         private bool mustard = true;
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
+        /// <summary>
+        /// Overrides Ingredients in Entree.
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -27,27 +43,42 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Class constructor.  Sets the Price and Calories.
+        /// </summary>
         public SteakosaurusBurger()
         {
             this.Price = 5.15;
             this.Calories = 621;
         }
 
+        /// <summary>
+        /// Method to hold the bun.
+        /// </summary>
         public void HoldBun()
         {
             this.bun = false;
         }
 
+        /// <summary>
+        /// Method to hold the pickle.
+        /// </summary>
         public void HoldPickle()
         {
             this.pickle = false;
         }
 
+        /// <summary>
+        /// Method to hold the ketchup.
+        /// </summary>
         public void HoldKetchup()
         {
             this.ketchup = false;
         }
 
+        /// <summary>
+        /// Method to hold the mustard.
+        /// </summary>
         public void HoldMustard()
         {
             this.mustard = false;

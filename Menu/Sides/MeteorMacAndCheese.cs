@@ -1,11 +1,19 @@
-﻿using System;
+﻿/* MeteorMacAndCheese.cs
+ * Author: Mike Ruckert
+ */
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Represents the Metor Mac and Cheese side menu item.  Inherits from the Side class.
+    /// </summary>
     public class MeteorMacAndCheese : Side
     {
+        /// <summary>
+        /// Sets the Size of this side.
+        /// </summary>
         private Size size;
         public override Size Size
         {
@@ -33,6 +41,10 @@ namespace DinoDiner.Menu.Sides
                 return size;
             }
         }
+
+        /// <summary>
+        /// Class constructor.  Sets the ingredients list for this side.
+        /// </summary>
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;

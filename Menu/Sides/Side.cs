@@ -1,16 +1,24 @@
-﻿using System;
+﻿/* Side.cs
+ * Author: Nathan Bean
+ * Modified by: Mike Ruckert
+ */
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Enumerates values for the Size property.
+    /// </summary>
     public enum Size
     {
         Small,
-        Medium, 
+        Medium,
         Large
     }
 
+    /// <summary>
+    /// Abstract class that side menu items will inherit from.
+    /// </summary>
     public abstract class Side
     {
         /// <summary>
@@ -26,7 +34,7 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public virtual List<string> Ingredients { get; protected set;  }
+        public virtual List<string> Ingredients { get; protected set; }
 
         /// <summary>
         /// Gets or sets the size

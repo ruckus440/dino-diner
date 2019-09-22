@@ -1,11 +1,19 @@
-﻿using System;
+﻿/* Fryceritops.cs
+ * Author: Mike Ruckert
+ */
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Represents the Fryceritops side menu item.  Inherits from the Side class.
+    /// </summary>
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// Sets the Size property for this side.
+        /// </summary>
         private Size size;
         public override Size Size
         {
@@ -34,6 +42,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Class constructor.  Sets the ingredients list for this class.
+        /// </summary>
         public Fryceritops()
         {
             this.Size = Size.Small;

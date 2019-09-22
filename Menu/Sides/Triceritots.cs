@@ -1,12 +1,19 @@
-﻿using System;
+﻿/* Triceritots.cs
+ * Author: Mike Ruckert
+ */
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
- 
+    /// <summary>
+    /// This class represents the Triceritots side menu item.  It inherits from the Side class.
+    /// </summary>
     public class Triceritots : Side
     {
+        /// <summary>
+        /// Sets the size of the side.  Uses Size enum from Side class.
+        /// </summary>
         private Size size;
         public override Size Size
         {
@@ -35,12 +42,13 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Triceritots constructor.  
+        /// </summary>
         public Triceritots()
         {
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         }
-
-
     }
 }

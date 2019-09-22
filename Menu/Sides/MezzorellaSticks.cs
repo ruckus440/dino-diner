@@ -1,11 +1,19 @@
-﻿using System;
+﻿/* MezzorellaSticks.cs
+ * Author: Mike Ruckert
+ */
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
+    /// <summary>
+    /// Represents the MezzorellaSticks side menu item.  Inherits from the Side class.
+    /// </summary>
     public class MezzorellaSticks : Side
     {
+        /// <summary>
+        /// Sets the Size property for the side.
+        /// </summary>
         private Size size;
         public override Size Size
         {
@@ -34,6 +42,9 @@ namespace DinoDiner.Menu.Sides
             }
         }
 
+        /// <summary>
+        /// Class constructor.  Sets list of ingredients.
+        /// </summary>
         public MezzorellaSticks()
         {
             this.Size = Size.Small;

@@ -1,16 +1,20 @@
-﻿using System;
+﻿/* PterodactylWings.cs
+ * Author: Mike Ruckert
+ */
 using System.Collections.Generic;
-using System.Text;
 
 
 namespace DinoDiner.Menu.Entrees
 {
-
-    public class PterodactylWings
+    /// <summary>
+    /// Represents the Pterodactyl Wings entree menu item.  Inherits from the Entree class.
+    /// </summary>
+    public class PterodactylWings : Entree
     {
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Overrides the Ingredients property from Entree.
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
@@ -19,6 +23,9 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Class constructor.  Sets the Price and Calories properties.
+        /// </summary>
         public PterodactylWings()
         {
             this.Price = 7.21;

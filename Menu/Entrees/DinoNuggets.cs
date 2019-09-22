@@ -1,37 +1,56 @@
-﻿using System;
+﻿/* TRexKingBurger.cs
+ * Author: Mike Ruckert
+ */
+
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class DinoNuggets
+    /// <summary>
+    /// Represents the DinoNuggets entree menu item.  Inherits from the Entree class.
+    /// </summary>
+    public class DinoNuggets : Entree
     {
-        public uint numNuggs = 6;        
+        /// <summary>
+        /// Indicates the number of nuggets in the defualt order.
+        /// </summary>
+        public uint numNuggs = 6;
+
+        /// <summary>
+        /// Adds default nuggets to the order.
+        /// </summary>
         List<string> ingredients = new List<string>() { "Chicken Nugget", "Chicken Nugget", "Chicken Nugget",
                                                         "Chicken Nugget", "Chicken Nugget", "Chicken Nugget" };
 
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-        public List<string> Ingredients
+        /// <summary>
+        /// Gets the Ingredients.
+        /// </summary>
+        public override List<string> Ingredients
         {
             get
             {
-                return ingredients;            
+                return ingredients;
             }
         }
 
+        /// <summary>
+        /// DinoNuggets constructor.
+        /// </summary>
         public DinoNuggets()
         {
             this.Price = 4.25;
             this.Calories = 59 * numNuggs;
-            
+
         }
 
+        /// <summary>
+        /// Adds a nugget to the order.  Adjusts Price, Calories and Ingredients accordingly.
+        /// </summary>
         public void AddNugget()
         {
             this.Price += .25;
             this.Calories += 59;
-            ingredients.Add("Chicken Nugget");
+            this.ingredients.Add("Chicken Nugget");
         }
 
     }
