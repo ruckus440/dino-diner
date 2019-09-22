@@ -9,11 +9,12 @@ namespace DinoDiner.Menu.Entrees
         private bool dressing = true;
         private bool lettuce = true;
         private bool cheese = true;
-
+        /*
         public override double Price { get; set; }
         public override uint Calories { get; set; }
-        /*
-        public List<string> Ingredients
+        */
+        
+        public override List<string> Ingredients
         {
             get
             {
@@ -24,7 +25,7 @@ namespace DinoDiner.Menu.Entrees
                 return ingredients;
             }
         }
-        */
+        
 
         public VelociWrap()
         {

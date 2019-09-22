@@ -5,16 +5,8 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class TRexKingBurger
+    public class TRexKingBurger : Entree
     {
-        /*
-               ### T-Rex King Burger (20 points possible)
-
-Implement a class to represent the T-Rex King Burger entree.  
-Its price is **$8.45**, it contains **728 calories**, and its ingredients are: a 
-**whole wheat bun, three steakburger patties, lettuce, tomato, onion, pickle, ketchup, mustard**, and **mayo**.  
-* It should implement methods for holding the **bun, lettuce, tomato, onion, pickle, ketchup, mustard**, and **mayo.**
-                */
         private bool bun = true;
         private bool lettuce = true;
         private bool tomato = true;
@@ -23,10 +15,10 @@ Its price is **$8.45**, it contains **728 calories**, and its ingredients are: a
         private bool ketchup = true;
         private bool mustard = true;
         private bool mayo = true;
-        public double Price { get; set; }
-        public uint Calories { get; set; }
+        public override double Price { get; set; }
+        public override uint Calories { get; set; }
 
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
