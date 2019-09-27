@@ -9,12 +9,12 @@ namespace DinoDiner.Menu.Sides
     /// <summary>
     /// Enumerates values for the Size property.
     /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
+    //public enum Size
+    //{
+    //    Small,
+    //    Medium,
+    //    Large
+    //}
 
     /// <summary>
     /// Abstract class that side menu items will inherit from.
