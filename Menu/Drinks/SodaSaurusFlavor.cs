@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DinoDiner.Menu.Drinks
+﻿namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Enumerates SodaSaurusFlavors for the base case
+    /// </summary>
     public enum SodaSaurusFlavor
     {
         Cola,

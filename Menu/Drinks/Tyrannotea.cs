@@ -1,15 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Represents the Tyrannotea Drink Menu item
+    /// </summary>
     public class Tyrannotea : Drink
     {
+        /// <summary>
+        /// Private backing size variable
+        /// </summary>
         private Size size;
-        public bool Sweet { get; set; }// = false;
-        public bool Lemon { get; set; }// = false;
-
+        /// <summary>
+        /// Getter and setter to indicate Sweet
+        /// </summary>
+        public bool Sweet { get; set; }
+        /// <summary>
+        /// Getter and setter to indicate Lemon
+        /// </summary>
+        public bool Lemon { get; set; }
+        /// <summary>
+        /// Overrides the default size.  Adjusts price and calories according to Size.
+        /// </summary>
         public override Size Size
         {
             set
@@ -51,19 +63,25 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
-
+        /// <summary>
+        /// Adds lemon to the ingredients.
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;
             this.Ingredients.Add("Lemon");
         }
-
+        /// <summary>
+        /// Sweetens the tea.
+        /// </summary>
         public void Sweeten()
         {
             Sweet = true;
             this.Ingredients.Add("Cane Sugar");
         }
-
+        /// <summary>
+        /// Tyrannotea constructor.  Builds Ingredients.
+        /// </summary>
         public Tyrannotea()
         {
             this.Lemon = false;

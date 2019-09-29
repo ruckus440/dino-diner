@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Drink base class
+    /// </summary>
     public abstract class Drink
     {
         /// <summary>
@@ -23,7 +24,9 @@ namespace DinoDiner.Menu.Drinks
         /// </summary>
         public abstract Size Size { get; set; }
         public virtual bool Ice { get; set; } = true;
-
+        /// <summary>
+        /// Sets Ice to false to hold the ice
+        /// </summary>
         public void HoldIce()
         {
             this.Ice = false;

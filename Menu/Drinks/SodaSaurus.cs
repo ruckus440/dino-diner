@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
+    /// <summary>
+    /// Represents a SodaSaurus menu item.  Inherits from Drink.
+    /// </summary>
     public class SodaSaurus : Drink
     {
+        /// <summary>
+        /// Sets default flavor to Cola
+        /// </summary>
         private SodaSaurusFlavor flavor = SodaSaurusFlavor.Cola;
+        /// <summary>
+        /// Gets and Sets the Flavor
+        /// </summary>
         public SodaSaurusFlavor Flavor
         {
-
             get
             {
                 return flavor;
@@ -19,9 +25,13 @@ namespace DinoDiner.Menu.Drinks
                 flavor = value;
             }
         }
-
+        /// <summary>
+        /// Private backing Size variable
+        /// </summary>
         private Size size;
-
+        /// <summary>
+        /// Gets and sets the Size
+        /// </summary>
         public override Size Size
         {
             set
@@ -48,11 +58,13 @@ namespace DinoDiner.Menu.Drinks
                 return size;
             }
         }
-
+        /// <summary>
+        /// SodaSaurus constructor.  Sets default ingredients.
+        /// </summary>
         public SodaSaurus()
         {
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
-        }        
-    }   
+        }
+    }
 }
