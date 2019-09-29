@@ -14,7 +14,6 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Lemon = true;
         }
-
         public Water()
         {
             this.Price = .10;

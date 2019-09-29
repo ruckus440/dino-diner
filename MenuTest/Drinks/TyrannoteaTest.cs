@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
+﻿using DinoDiner.Menu;
 using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu;
+using Xunit;
 
 namespace MenuTest.Drinks
 {
