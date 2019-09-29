@@ -31,7 +31,5 @@ namespace DinoDiner.Menu.Drinks
         {
             this.Ice = false;
         }
-
-
     }
 }
