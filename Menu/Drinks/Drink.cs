@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/* Drink.cs
+ * Author: Mike Ruckert
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {

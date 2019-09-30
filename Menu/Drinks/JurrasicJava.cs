@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/* JurrasicJava.cs
+ * Author: Mike Ruckert
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
@@ -74,6 +77,5 @@ namespace DinoDiner.Menu.Drinks
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Water", "Coffee" };
         }
-
     }
 }

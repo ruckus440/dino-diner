@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿/* Tyrannotea.cs
+ * Author: Mike Ruckert
+ */
+using System.Collections.Generic;
 
 namespace DinoDiner.Menu.Drinks
 {
