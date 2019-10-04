@@ -2,12 +2,10 @@
  * Author: Mike Ruckert
  */
 
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Represents the T-Rex King Burger entree menu item.  Inherits from the Entree class.
@@ -46,7 +44,7 @@ namespace DinoDiner.Menu.Entrees
         /// Indicates whether mayo is included in Ingredients.
         /// </summary>
         private bool mayo = true;
-        
+
         /// <summary>
         /// Sets the Ingredient property.
         /// </summary>
@@ -64,7 +62,7 @@ namespace DinoDiner.Menu.Entrees
                 if (mustard) ingredients.Add("Mustard");
                 if (mayo) ingredients.Add("Mayo");
                 return ingredients;
-            }           
+            }
         }
 
         /// <summary>

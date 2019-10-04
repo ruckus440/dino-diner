@@ -1,7 +1,7 @@
 ﻿/* SodaSaurusFlavor.cs
  * Author: Mike Ruckert
  */
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Enumerates SodaSaurusFlavors for the base case Drink
