@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides Ingredients in Entree.
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -82,6 +82,11 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+        }
+
+        public override string ToString()
+        {
+            return "Steakosaurus Burger";
         }
     }
 }

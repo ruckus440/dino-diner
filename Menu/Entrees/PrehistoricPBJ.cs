@@ -23,7 +23,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides the Entree Ingredients property.
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -57,6 +57,11 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+        }
+
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
     }
 }

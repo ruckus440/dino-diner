@@ -2,6 +2,7 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.Text;
 
 namespace DinoDiner.Menu
 {
@@ -92,6 +93,16 @@ namespace DinoDiner.Menu
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Water", "Tea" };
             if (Sweet) this.Ingredients.Add("Cane Sugar");
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(this.Size.ToString() + " ");
+            if (this.Sweet)
+                sb.Append("Sweet ");
+            sb.Append("Tyrannotea");
+            return sb.ToString();
         }
     }
 }

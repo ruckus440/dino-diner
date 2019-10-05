@@ -1,4 +1,4 @@
-﻿/* SodaSaurusFlavor.cs
+﻿/* SodasaurusFlavor.cs
  * Author: Mike Ruckert
  */
 namespace DinoDiner.Menu
@@ -6,7 +6,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Enumerates SodaSaurusFlavors for the base case Drink
     /// </summary>
-    public enum SodaSaurusFlavor
+    public enum SodasaurusFlavor
     {
         Cola,
         Orange,

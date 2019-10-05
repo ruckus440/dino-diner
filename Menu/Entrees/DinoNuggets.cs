@@ -25,7 +25,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the Ingredients.
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -51,6 +51,11 @@ namespace DinoDiner.Menu
             this.Price += .25;
             this.Calories += 59;
             this.ingredients.Add("Chicken Nugget");
+        }
+
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
 
     }

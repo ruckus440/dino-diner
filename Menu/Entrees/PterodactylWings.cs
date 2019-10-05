@@ -14,7 +14,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides the Ingredients property from Entree.
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -31,9 +31,11 @@ namespace DinoDiner.Menu
             this.Price = 7.21;
             this.Calories = 318;
         }
+
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
+        }
     }
 
-        
-        
-    
 }

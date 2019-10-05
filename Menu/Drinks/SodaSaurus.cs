@@ -1,23 +1,24 @@
-﻿/* SodaSaurus.cs
+﻿/* Sodasaurus.cs
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.Text;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
-    /// Represents a SodaSaurus menu item.  Inherits from Drink.
+    /// Represents a Sodasaurus menu item.  Inherits from Drink.
     /// </summary>
-    public class SodaSaurus : Drink, IMenuItem
+    public class Sodasaurus : Drink
     {
         /// <summary>
         /// Sets default flavor to Cola
         /// </summary>
-        private SodaSaurusFlavor flavor = SodaSaurusFlavor.Cola;
+        private SodasaurusFlavor flavor = SodasaurusFlavor.Cola;
         /// <summary>
         /// Gets and Sets the Flavor
         /// </summary>
-        public SodaSaurusFlavor Flavor
+        public SodasaurusFlavor Flavor
         {
             get
             {
@@ -62,12 +63,21 @@ namespace DinoDiner.Menu
             }
         }
         /// <summary>
-        /// SodaSaurus constructor.  Sets default ingredients.
+        /// Sodasaurus constructor.  Sets default ingredients.
         /// </summary>
-        public SodaSaurus()
+        public Sodasaurus()
         {
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();            
+            sb.Append(this.Size.ToString() + " ");
+            sb.Append(this.Flavor.ToString() + " ");
+            sb.Append("Sodasaurus");
+            return sb.ToString();
         }
     }
 }

@@ -50,5 +50,14 @@ namespace DinoDiner.Menu
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Breading", "Cheese Product", "Vegetable Oil" };
         }
+
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.Size.ToString() + " Mezzorella Sticks";
+        }
     }
 }

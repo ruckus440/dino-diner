@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Interface for menu items
     /// </summary>
-    interface IMenuItem
+    public interface IMenuItem
     {
         /// <summary>
         /// Price for menu items

@@ -3,6 +3,7 @@
  */
 
 using System.Collections.Generic;
+using System.Text;
 
 namespace DinoDiner.Menu
 {
@@ -50,6 +51,15 @@ namespace DinoDiner.Menu
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
 
+        }
+
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.Size.ToString() + " Meteor Mac and Cheese";
         }
     }
 }

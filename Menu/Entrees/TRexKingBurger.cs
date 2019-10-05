@@ -48,7 +48,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Sets the Ingredient property.
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -136,6 +136,11 @@ namespace DinoDiner.Menu
         public void HoldMayo()
         {
             this.mayo = false;
+        }
+
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
     }
 }

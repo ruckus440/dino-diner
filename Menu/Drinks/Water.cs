@@ -32,5 +32,10 @@ namespace DinoDiner.Menu
             this.Ingredients = new List<string>() { "Water" };
             if (Lemon) this.Ingredients.Add("Lemon");
         }
+
+        public override string ToString()
+        {            
+            return this.Size.ToString() + " Water";
+        }
     }
 }

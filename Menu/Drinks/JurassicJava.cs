@@ -2,13 +2,14 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.Text;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Represents JurrasiJava menu item.  Inherits from Drink base class.
     /// </summary>
-    public class JurrasicJava : Drink
+    public class JurassicJava : Drink
     {
         //public double Price { get; set; }
         //public uint Calories { get; set; }
@@ -83,10 +84,20 @@ namespace DinoDiner.Menu
         /// <summary>
         /// JurrasicJava constructor.  Sets ingredients list.
         /// </summary>
-        public JurrasicJava()
+        public JurassicJava()
         {
             this.Size = Size.Small;
             this.Ingredients = new List<string>() { "Water", "Coffee" };
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();            
+            sb.Append(this.Size.ToString() + " ");
+            if (Decaf)
+                sb.Append("Decaf ");
+            sb.Append("Jurassic Java");
+            return sb.ToString();
         }
     }
 }

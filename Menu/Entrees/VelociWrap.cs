@@ -26,7 +26,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides the Ingredients property in Entree.
         /// </summary>        
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -69,6 +69,11 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.cheese = false;
+        }
+
+        public override string ToString()
+        {
+            return "Veloci-Wrap";
         }
     }
 }

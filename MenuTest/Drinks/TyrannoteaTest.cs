@@ -2,7 +2,7 @@
  * Author: Mike Ruckert
  */
 using DinoDiner.Menu;
-using DinoDiner.Menu.Drinks;
+//using DinoDiner.Menu.Drinks;
 using Xunit;
 
 namespace MenuTest.Drinks

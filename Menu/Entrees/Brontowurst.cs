@@ -22,7 +22,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Get the ingredient list and returns it.
         /// </summary>
-        public override List<string> Ingredients
+        public List<string> Ingredients
         {
             get
             {
@@ -66,6 +66,11 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onion = false;
+        }
+
+        public override string ToString()
+        {
+            return "Brontowurst";
         }
     }
 }

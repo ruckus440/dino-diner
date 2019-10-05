@@ -30,7 +30,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the drink
         /// </summary>
-        public Drink Drink { get; set; } = new SodaSaurus();
+        public Drink Drink { get; set; } = new Sodasaurus();
 
         /// <summary>
         /// Gets the price of the combo
@@ -91,6 +91,15 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             this.Entree = entree;
+        }
+
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return this.Entree.ToString() + " Combo";
         }
     }
 }
