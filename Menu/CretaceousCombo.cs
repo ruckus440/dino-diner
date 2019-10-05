@@ -2,9 +2,9 @@
  * Author: Nathan Bean
  * Modified by: Mike Ruckert
  */
-using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
+using DinoDiner.Menu;//.Drinks;
+//using DinoDiner.Menu.Entrees;
+//using DinoDiner.Menu.Sides;
 using System.Collections.Generic;
 
 namespace DinoDiner.Menu

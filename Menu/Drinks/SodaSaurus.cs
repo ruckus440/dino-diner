@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Represents a SodaSaurus menu item.  Inherits from Drink.
     /// </summary>
-    public class SodaSaurus : Drink
+    public class SodaSaurus : Drink, IMenuItem
     {
         /// <summary>
         /// Sets default flavor to Cola
