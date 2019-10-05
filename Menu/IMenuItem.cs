@@ -13,14 +13,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Price for menu items
         /// </summary>
-        double Price { get; set; }
+        double Price { get; }
         /// <summary>
         /// Calories for menu items
         /// </summary>
-        uint Calories { get; set; }
+        uint Calories { get; }
         /// <summary>
         /// Ingredients for menu items
         /// </summary>
-        List<string> Ingredients { get; set; }
+        List<string> Ingredients { get; }
     }
 }
