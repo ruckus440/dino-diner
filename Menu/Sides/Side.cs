@@ -4,17 +4,17 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Enumerates values for the Size property.
     /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
-    }
+    //public enum Size
+    //{
+    //    Small,
+    //    Medium,
+    //    Large
+    //}
 
     /// <summary>
     /// Abstract class that side menu items will inherit from.

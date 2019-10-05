@@ -4,7 +4,7 @@
  */
 using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// Represents the Prehistoric PBJ entree menu item.  Inherits from the Entree class.
