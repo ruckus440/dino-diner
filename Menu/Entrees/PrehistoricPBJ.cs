@@ -15,6 +15,7 @@ namespace DinoDiner.Menu
         /// Boolean to indicate whether peanut butter is held.
         /// </summary>
         private bool peanutButter = true;
+
         /// <summary>
         /// Boolean to indicate whether jelly is held.
         /// </summary>
@@ -23,7 +24,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides the Entree Ingredients property.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -59,6 +60,10 @@ namespace DinoDiner.Menu
             this.jelly = false;
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Prehistoric PB&J";

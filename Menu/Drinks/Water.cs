@@ -14,7 +14,23 @@ namespace DinoDiner.Menu
         /// Gets and sets lemon property
         /// </summary>
         public bool Lemon { get; set; } = false;
+
+        /// <summary>
+        /// Gets and sets the size property
+        /// </summary>
         public override Size Size { get; set; }
+
+        /// <summary>
+        /// Gets the Ingredients list
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Water" };
+            }
+        }
+
         /// <summary>
         /// Set Lemon to true.
         /// </summary>
@@ -22,6 +38,7 @@ namespace DinoDiner.Menu
         {
             this.Lemon = true;
         }
+
         /// <summary>
         /// Water constructore.  Sets Ingredient list.  Adds lemon if true.
         /// </summary>
@@ -29,10 +46,13 @@ namespace DinoDiner.Menu
         {
             this.Price = .10;
             this.Calories = 0;
-            this.Ingredients = new List<string>() { "Water" };
             if (Lemon) this.Ingredients.Add("Lemon");
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {            
             return this.Size.ToString() + " Water";

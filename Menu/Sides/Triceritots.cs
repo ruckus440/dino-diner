@@ -13,9 +13,24 @@ namespace DinoDiner.Menu
     public class Triceritots : Side
     {
         /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Potato", "Salt", "Vegetable Oil" };
+            }
+        }
+
+        /// <summary>
         /// Sets the size of the side.  Uses Size enum from Side class.
         /// </summary>
         private Size size;
+
+        /// <summary>
+        /// Gets and sets the Size
+        /// </summary>
         public override Size Size
         {
             set
@@ -49,7 +64,6 @@ namespace DinoDiner.Menu
         public Triceritots()
         {
             this.Size = Size.Small;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         }
 
         /// <summary>

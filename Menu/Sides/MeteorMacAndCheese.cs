@@ -13,6 +13,17 @@ namespace DinoDiner.Menu
     public class MeteorMacAndCheese : Side
     {
         /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
+            }
+        }
+
+        /// <summary>
         /// Sets the Size of this side.
         /// </summary>
         private Size size;
@@ -49,8 +60,6 @@ namespace DinoDiner.Menu
         public MeteorMacAndCheese()
         {
             this.Size = Size.Small;
-            this.Ingredients = new List<string>() { "Macaroni Noodles", "Cheese Product", "Pork Sausage" };
-
         }
 
         /// <summary>

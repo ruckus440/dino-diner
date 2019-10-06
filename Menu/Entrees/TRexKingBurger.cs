@@ -16,30 +16,37 @@ namespace DinoDiner.Menu
         /// Indicates whether the bun is included in Ingredients.
         /// </summary>
         private bool bun = true;
+
         /// <summary>
         /// Indicates whether lettuce is included in Ingredients.
         /// </summary>
         private bool lettuce = true;
+
         /// <summary>
         /// Indicates whether tomato is included in Ingredients.
         /// </summary>
         private bool tomato = true;
+
         /// <summary>
         /// Indicates whether onion is included in Ingredients.
         /// </summary>
         private bool onion = true;
+
         /// <summary>
         /// Indicates whether pickle is included in Ingredients.
         /// </summary>
         private bool pickle = true;
+
         /// <summary>
         /// Indicates whether ketchup is included in Ingredients.
         /// </summary>
         private bool ketchup = true;
+
         /// <summary>
         /// Indicates whether mustard is included in Ingredients.
         /// </summary>
         private bool mustard = true;
+
         /// <summary>
         /// Indicates whether mayo is included in Ingredients.
         /// </summary>
@@ -48,7 +55,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Sets the Ingredient property.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -138,6 +145,10 @@ namespace DinoDiner.Menu
             this.mayo = false;
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "T-Rex King Burger";

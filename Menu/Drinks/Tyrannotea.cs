@@ -15,14 +15,31 @@ namespace DinoDiner.Menu
         /// Private backing size variable
         /// </summary>
         private Size size;
+
         /// <summary>
         /// Getter and setter to indicate Sweet
         /// </summary>
         public bool Sweet { get; set; }
+
         /// <summary>
         /// Getter and setter to indicate Lemon
         /// </summary>
         public bool Lemon { get; set; }
+
+        /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>() { "Water", "Tea" };
+                if (Lemon) ingredients.Add("Lemon");
+                if (Sweet) ingredients.Add("Cane Sugar");
+                return ingredients;
+            }
+        }
+
         /// <summary>
         /// Overrides the default size.  Adjusts price and calories according to Size.
         /// </summary>
@@ -67,34 +84,35 @@ namespace DinoDiner.Menu
                 return size;
             }
         }
+
         /// <summary>
         /// Adds lemon to the ingredients.
         /// </summary>
         public void AddLemon()
         {
             Lemon = true;
-            this.Ingredients.Add("Lemon");
         }
+
         /// <summary>
         /// Sweetens the tea.
         /// </summary>
         public void Sweeten()
         {
             Sweet = true;
-            this.Ingredients.Add("Cane Sugar");
         }
+
         /// <summary>
         /// Tyrannotea constructor.  Builds Ingredients.
         /// </summary>
         public Tyrannotea()
         {
-            this.Lemon = false;
-            this.Sweet = false;
             this.Size = Size.Small;
-            this.Ingredients = new List<string>() { "Water", "Tea" };
-            if (Sweet) this.Ingredients.Add("Cane Sugar");
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

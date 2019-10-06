@@ -14,13 +14,15 @@ namespace DinoDiner.Menu
         /// Indicates the price of the item.
         /// </summary>
         public double Price { get; set; }
+
         /// <summary>
         /// Indicates the number of calories in the item.
         /// </summary>
         public uint Calories { get; set; }
+
         /// <summary>
         /// Indicates the list of ingredients.  
         /// </summary>
-        public List<string> Ingredients { get; set; }
+        public virtual List<string> Ingredients { get; protected set; }
     }
 }

@@ -12,6 +12,17 @@ namespace DinoDiner.Menu
     public class MezzorellaSticks : Side
     {
         /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Breading", "Cheese Product", "Vegetable Oil" };
+            }
+        }
+
+        /// <summary>
         /// Sets the Size property for the side.
         /// </summary>
         private Size size;
@@ -48,7 +59,6 @@ namespace DinoDiner.Menu
         public MezzorellaSticks()
         {
             this.Size = Size.Small;
-            this.Ingredients = new List<string>() { "Breading", "Cheese Product", "Vegetable Oil" };
         }
 
         /// <summary>

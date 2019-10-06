@@ -35,6 +35,14 @@ namespace DinoDiner.Menu
         /// </summary>
         public bool Decaf { get; set; } = false;
 
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Water", "Coffee" };
+            }
+        }
+
         /// <summary>
         /// Gets and Sets the Size.  Sets Price and Calories according to Size.
         /// </summary>

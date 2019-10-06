@@ -12,17 +12,29 @@ namespace DinoDiner.Menu
     public class Brontowurst : Entree
     {
         /// <summary>
-        /// Booleans to indicate whether the relative ingredient is held.
+        /// Indicates whether to include brautwurst
         /// </summary>
         private bool brautwurst = true;
+
+        /// <summary>
+        /// Indicats whether to include the bun
+        /// </summary>
         private bool wholeWheatBun = true;
+
+        /// <summary>
+        /// Indicates whether to include the peppers
+        /// </summary>
         private bool peppers = true;
+
+        /// <summary>
+        /// Indicates whether to include the onion
+        /// </summary>
         private bool onion = true;
 
         /// <summary>
         /// Get the ingredient list and returns it.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -68,6 +80,10 @@ namespace DinoDiner.Menu
             this.onion = false;
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Brontowurst";

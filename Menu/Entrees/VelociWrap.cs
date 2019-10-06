@@ -14,10 +14,12 @@ namespace DinoDiner.Menu
         /// Indicates whether dressing is included in the ingredients.
         /// </summary>
         private bool dressing = true;
+
         /// <summary>
         /// Indicates whether lettuce is included in the ingredients.
         /// </summary>
         private bool lettuce = true;
+
         /// <summary>
         /// Indicates whether parmesan cheese is included in the ingredients.
         /// </summary>
@@ -26,7 +28,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Overrides the Ingredients property in Entree.
         /// </summary>        
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -71,6 +73,10 @@ namespace DinoDiner.Menu
             this.cheese = false;
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Veloci-Wrap";

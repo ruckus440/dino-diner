@@ -12,23 +12,20 @@ namespace DinoDiner.Menu
     public class DinoNuggets : Entree
     {
         /// <summary>
-        /// Indicates the number of nuggets in the defualt order.
+        /// Indicates the number of nuggets in the default order.
         /// </summary>
         public uint numNuggs = 6;
-
-        /// <summary>
-        /// Adds default nuggets to the order.
-        /// </summary>
-        List<string> ingredients = new List<string>() { "Chicken Nugget", "Chicken Nugget", "Chicken Nugget",
-                                                        "Chicken Nugget", "Chicken Nugget", "Chicken Nugget" };
-
+                
         /// <summary>
         /// Gets the Ingredients.
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
+                List<string> ingredients = new List<string>();
+                for (int i = 0; i < numNuggs; i++)
+                    ingredients.Add("Chicken Nugget");
                 return ingredients;
             }
         }
@@ -40,7 +37,6 @@ namespace DinoDiner.Menu
         {
             this.Price = 4.25;
             this.Calories = 59 * numNuggs;
-
         }
 
         /// <summary>
@@ -50,13 +46,16 @@ namespace DinoDiner.Menu
         {
             this.Price += .25;
             this.Calories += 59;
-            this.ingredients.Add("Chicken Nugget");
+            numNuggs++;
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Dino-Nuggets";
         }
-
     }
 }

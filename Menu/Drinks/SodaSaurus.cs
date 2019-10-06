@@ -15,6 +15,7 @@ namespace DinoDiner.Menu
         /// Sets default flavor to Cola
         /// </summary>
         private SodasaurusFlavor flavor = SodasaurusFlavor.Cola;
+
         /// <summary>
         /// Gets and Sets the Flavor
         /// </summary>
@@ -29,10 +30,23 @@ namespace DinoDiner.Menu
                 flavor = value;
             }
         }
+
+        /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
+            }
+        }
+
         /// <summary>
         /// Private backing Size variable
         /// </summary>
         private Size size;
+
         /// <summary>
         /// Gets and sets the Size
         /// </summary>
@@ -68,9 +82,12 @@ namespace DinoDiner.Menu
         public Sodasaurus()
         {
             this.Size = Size.Small;
-            this.Ingredients = new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
         }
 
+        /// <summary>
+        /// Overrides the default ToString()
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();            

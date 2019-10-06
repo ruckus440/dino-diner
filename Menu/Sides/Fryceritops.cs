@@ -12,6 +12,17 @@ namespace DinoDiner.Menu
     public class Fryceritops : Side
     {
         /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
+        public override List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>() { "Potato", "Salt", "Vegetable Oil" };
+            }
+        }
+
+        /// <summary>
         /// Sets the Size property for this side.
         /// </summary>
         private Size size;
@@ -48,7 +59,6 @@ namespace DinoDiner.Menu
         public Fryceritops()
         {
             this.Size = Size.Small;
-            this.Ingredients = new List<string>() { "Potato", "Salt", "Vegetable Oil" };
         }
 
         /// <summary>
