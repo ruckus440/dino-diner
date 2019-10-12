@@ -9,6 +9,23 @@
       Title="CustomizeCombo">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton Grid.Row="0" Grid.Column="0">Small</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="1">Medium</RadioButton>
+            <RadioButton Grid.Row="0" Grid.Column="2">Large</RadioButton>
+
+        </StackPanel>
+        <Button Click="SelectEntree" Grid.Row="1" Grid.Column="0">Entree</Button>
+        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1">Side</Button>
+        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="2">Drink</Button>
     </Grid>
 </Page>
