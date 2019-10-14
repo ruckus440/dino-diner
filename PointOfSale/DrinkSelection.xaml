@@ -8,7 +8,145 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DrinkSelection">
 
+    <Page.Resources>
+        <Style x:Key = "buttonStyle" TargetType = "{x:Type Button}">
+            <Setter Property= "Height" Value = "40"/>
+            <Setter Property= "Width" Value = "160"/>
+            <Setter Property= "FontSize" Value = "20"/>
+            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+            <Setter Property= "Margin" Value = "10"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="Gainsboro"/>
+                    <Setter Property="Background" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="toggleStyle" TargetType="{x:Type ToggleButton}">
+            <Setter Property= "Height" Value = "40"/>
+            <Setter Property= "Width" Value = "160"/>
+            <Setter Property= "FontSize" Value = "20"/>
+            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+            <Setter Property= "Margin" Value = "10"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="White"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="radioStyle" TargetType="{x:Type RadioButton}" >
+            <Setter Property= "Margin" Value = "10"/>
+            <Setter Property= "Width" Value = "160"/>
+            <Setter Property= "Height" Value = "40"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+
+                        <BulletDecorator Background="White" Cursor="Hand">
+                            <BulletDecorator.Bullet>
+                                <Grid Height="40" Width="40">
+                                    <Border Name="RadioOuter" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="2" />
+                                    <Border CornerRadius="0" Margin="4" Name="RadioMark" Background="#FFADADAD" Visibility="Hidden" />
+                                </Grid>
+                            </BulletDecorator.Bullet>
+                            <TextBlock Margin="3,4,0,0" Foreground="#FF3E3E3E" FontFamily="Tahoma" FontSize="24">
+                                <ContentPresenter/>
+                            </TextBlock>
+                        </BulletDecorator>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="RadioOuter" Property="BorderBrush" Value="#FF008B19" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="180"/>
+            <ColumnDefinition MaxWidth="180"/>
+            <ColumnDefinition MaxWidth="180"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Grid.Column="0" Margin="60,10,60,10">
+            <Border BorderThickness="0 0 0 1" BorderBrush="Gray" CornerRadius="2" >
+                <TextBlock  
+                   Text="Size"
+                       FontSize="18"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   />
+            </Border>
+        </DockPanel>
+
+        <DockPanel Grid.Row="0" Grid.Column="1" Margin="60,10,60,10">
+            <Border BorderThickness="0 0 0 1" BorderBrush="Gray" CornerRadius="2" >
+                <TextBlock  
+                   Text="Drink"
+                       FontSize="18"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   />
+            </Border>
+        </DockPanel>
+
+        <DockPanel Grid.Row="0" Grid.Column="2" Margin="60,10,60,10">
+            <Border BorderThickness="0 0 0 1" BorderBrush="Gray" CornerRadius="2" >
+                <TextBlock  
+                   Text="Special"
+                       FontSize="18"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   />
+            </Border>
+        </DockPanel>
+
+
+
+
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <RadioButton Style="{StaticResource radioStyle}" >Small</RadioButton>
+            <RadioButton Style="{StaticResource radioStyle}">Medium</RadioButton>
+            <RadioButton Style="{StaticResource radioStyle}">Large</RadioButton>
+        </StackPanel>
         
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
+            <Button Style="{StaticResource buttonStyle}" Click="FlavorSelect">
+                <TextBlock>
+                    Sodasaurus
+                </TextBlock>
+            </Button>
+            <Button Style="{StaticResource buttonStyle}" Click="DrinkSelect">
+                <TextBlock TextWrapping="Wrap" TextAlignment="Center">
+                    Tyrannotea
+                </TextBlock>
+            </Button>
+            <Button Style="{StaticResource buttonStyle}" Click="DrinkSelect">Jurassic Java</Button>
+            <Button Style="{StaticResource buttonStyle}" Click="DrinkSelect">Water</Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
+            <ToggleButton Style="{StaticResource toggleStyle}">Sweet</ToggleButton>
+            <ToggleButton Style="{StaticResource toggleStyle}">Decaf</ToggleButton>
+            <ToggleButton Style="{StaticResource toggleStyle}">Add Lemon</ToggleButton>
+            <ToggleButton Style="{StaticResource toggleStyle}">Hold Ice</ToggleButton>
+        </StackPanel>
+
     </Grid>
 </Page>

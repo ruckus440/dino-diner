@@ -8,7 +8,41 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FlavorSelection">
 
-    <Grid>
-        
-    </Grid>
+    <WrapPanel>
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="140"/>
+                <Setter Property="Height" Value="75"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property= "FontSize" Value = "24"/>
+                <Setter Property="FontFamily" Value="Tahoma"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="Gray"/>
+
+            </Style>
+        </WrapPanel.Resources>
+
+        <Button>
+            Cherry
+        </Button>
+        <Button>
+            Chocolate
+        </Button>
+        <Button>
+            Cola
+        </Button>
+        <Button>
+            Lime
+        </Button>
+        <Button>
+            Orange
+        </Button>
+        <Button>
+            Root Beer
+        </Button>
+        <Button>
+            Vanlla
+        </Button>
+    </WrapPanel>
 </Page>

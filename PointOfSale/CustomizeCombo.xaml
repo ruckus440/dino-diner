@@ -8,24 +8,73 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomizeCombo">
 
+    <Page.Resources>
+        <Style x:Key = "buttonStyle" TargetType = "Button">
+            <Setter Property= "Height" Value = "40"/>
+            <Setter Property= "Width" Value = "160"/>
+            <Setter Property= "FontSize" Value = "24"/>            
+            <Setter Property= "Margin" Value = "10"/>
+            <Setter Property="FontFamily" Value="Tahoma"/>
+            <Setter Property="BorderBrush" Value="Gainsboro"></Setter>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="Gainsboro"/>
+                    <Setter Property="Background" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="radioStyle" TargetType="{x:Type RadioButton}" >
+            <Setter Property= "Margin" Value = "10"/>
+            <Setter Property= "Width" Value = "160"/>
+            <Setter Property= "Height" Value = "40"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RadioButton}">
+                        <BulletDecorator Background="White" Cursor="Hand">
+                            <BulletDecorator.Bullet>
+                                <Grid Height="40" Width="40">
+                                    <Border Name="RadioOuter" Background="Transparent" BorderBrush="Gainsboro" BorderThickness="2" CornerRadius="2" />
+                                    <Border CornerRadius="0" Margin="4" Name="RadioMark" Background="#FFADADAD" Visibility="Hidden" />
+                                </Grid>
+                            </BulletDecorator.Bullet>
+
+                            <TextBlock Margin="3,4,0,0" Foreground="#FF3E3E3E" FontFamily="Tahoma" FontSize="24">
+                                <ContentPresenter/>
+                            </TextBlock>
+                        </BulletDecorator>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="RadioOuter" Property="BorderBrush" Value="#FF008B19" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition MaxWidth="180"/>
+            <ColumnDefinition MaxWidth="180"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <RadioButton Grid.Row="0" Grid.Column="0">Small</RadioButton>
-            <RadioButton Grid.Row="0" Grid.Column="1">Medium</RadioButton>
-            <RadioButton Grid.Row="0" Grid.Column="2">Large</RadioButton>
+        
+        <StackPanel Orientation="Vertical">
+            <RadioButton Style="{StaticResource radioStyle}" >Small</RadioButton>
+            <RadioButton Style="{StaticResource radioStyle}">Medium</RadioButton>
+            <RadioButton Style="{StaticResource radioStyle}">Large</RadioButton>
 
         </StackPanel>
-        <Button Click="SelectEntree" Grid.Row="1" Grid.Column="0">Entree</Button>
-        <Button Click="SelectSide" Grid.Row="1" Grid.Column="1">Side</Button>
-        <Button Click="SelectDrink" Grid.Row="1" Grid.Column="2">Drink</Button>
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <Button Style="{StaticResource buttonStyle}" Click="SelectEntree">Entree</Button>
+            <Button Style="{StaticResource buttonStyle}" Click="SelectSide">Side</Button>
+            <Button Style="{StaticResource buttonStyle}" Click="SelectDrink">Drink</Button>
+        </StackPanel>
+        
     </Grid>
 </Page>

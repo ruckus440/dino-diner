@@ -24,5 +24,10 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        public void SideSelect(object sender, RoutedEventArgs args)
+        {
+            NavigationService.GoBack();
+        }
     }
 }
