@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Drink base class
     /// </summary>
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Gets and sets the price
@@ -41,6 +41,12 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.Ice = false;
+        }
+
+        public string[] Special 
+        {
+            get; 
+        
         }
     }
 }

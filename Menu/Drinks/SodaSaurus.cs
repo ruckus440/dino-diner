@@ -48,6 +48,27 @@ namespace DinoDiner.Menu
         private Size size;
 
         /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special instructions for this order item
+        /// </summary>
+        public string[] Special
+        {
+            get 
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Gets and sets the Size
         /// </summary>
         public override Size Size

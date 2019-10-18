@@ -3,13 +3,14 @@
  * Modified by: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Represents the Prehistoric PBJ entree menu item.  Inherits from the Entree class.
     /// </summary>
-    public class PrehistoricPBJ : Entree
+    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
     {
         /// <summary>
         /// Boolean to indicate whether peanut butter is held.
@@ -20,6 +21,19 @@ namespace DinoDiner.Menu
         /// Boolean to indicate whether jelly is held.
         /// </summary>
         private bool jelly = true;
+
+        /// <summary>
+        /// The PropertyChanged event handler; 
+        /// notifies of changes to the Price, Description, 
+        /// and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // Helper function for notifying of property changes
+        private void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         
         /// <summary>
         /// Overrides the Entree Ingredients property.
@@ -50,6 +64,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -58,6 +74,9 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+
         }
 
         /// <summary>
@@ -67,6 +86,29 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Prehistoric PB&J";
+        }
+
+        /// <summary>
+        /// Gets and sets the description
+        /// </summary>
+        /// <returns></returns>
+        public string Description
+        {
+            get { return this.ToString();  }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!peanutButter) specials.Add("Hold Peanut Butter");
+                if (!jelly) specials.Add("Hold Jelly");
+                return specials.ToArray();
+            }
         }
     }
 }

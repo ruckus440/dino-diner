@@ -8,7 +8,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// Abstract class that entree menu items inherit from.
     /// </summary>
-    public abstract class Entree : IMenuItem
+    public abstract class Entree : IMenuItem, IOrderItem
     {
         /// <summary>
         /// Indicates the price of the item.
@@ -24,5 +24,15 @@ namespace DinoDiner.Menu
         /// Indicates the list of ingredients.  
         /// </summary>
         public virtual List<string> Ingredients { get; protected set; }
+
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        public string[] Special
+        {
+            get { };
+        }
     }
 }
