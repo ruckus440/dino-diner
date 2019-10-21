@@ -50,7 +50,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns the description of this order item
         /// </summary>
-        public string Description
+        public override string Description
         {
             get { return this.ToString(); }
         }
@@ -58,12 +58,17 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets any special instructions for this order item
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
-            get 
+            get
             {
                 List<string> special = new List<string>();
-                if (!Ice) special.Add("Hold Ice");
+                if (!Ice)
+                {
+                    special.Add("Hold Ice");
+                    NotifyOfPropertyChange("Special");
+                    NotifyOfPropertyChange("Ingredients");
+                }
                 return special.ToArray();
             }
         }
@@ -81,14 +86,17 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.Price = 1.50;
                         this.Calories = 112;
+                        NotifyChangeSize();
                         break;
                     case Size.Medium:
                         this.Price = 2.00;
                         this.Calories = 156;
+                        NotifyChangeSize();
                         break;
                     case Size.Large:
                         this.Price = 2.50;
                         this.Calories = 208;
+                        NotifyChangeSize();
                         break;
                 }
             }
@@ -111,7 +119,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();            
+            StringBuilder sb = new StringBuilder();
             sb.Append(this.Size.ToString() + " ");
             sb.Append(this.Flavor.ToString() + " ");
             sb.Append("Sodasaurus");

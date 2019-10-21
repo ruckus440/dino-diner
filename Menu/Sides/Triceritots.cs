@@ -3,7 +3,6 @@
  */
 
 using System.Collections.Generic;
-using System.Text;
 
 namespace DinoDiner.Menu
 {
@@ -24,6 +23,14 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Returns an empty string array for special instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get { return new string[0]; }
+        }
+
+        /// <summary>
         /// Sets the size of the side.  Uses Size enum from Side class.
         /// </summary>
         private Size size;
@@ -41,14 +48,17 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.Price = .99;
                         this.Calories = 352;
+                        NotifyChangeSize();
                         break;
                     case Size.Medium:
                         this.Price = 1.45;
                         this.Calories = 410;
+                        NotifyChangeSize();
                         break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 590;
+                        NotifyChangeSize();
                         break;
                 }
             }
@@ -73,6 +83,14 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return this.Size.ToString() + " Triceritots";
+        }
+
+        /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
         }
     }
 }

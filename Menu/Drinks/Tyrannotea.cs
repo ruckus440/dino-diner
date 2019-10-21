@@ -17,6 +17,29 @@ namespace DinoDiner.Menu
         private Size size;
 
         /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special instructions for this order item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                if (Sweet) special.Add("Add Cane Sugar");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Getter and setter to indicate Sweet
         /// </summary>
         public bool Sweet { get; set; }
@@ -58,6 +81,7 @@ namespace DinoDiner.Menu
                             this.Price = .99 * 2;
                             this.Calories = 8 * 2;
                         }
+                        NotifyChangeSize();
                         break;
                     case Size.Medium:
                         this.Price = 1.49;
@@ -67,6 +91,7 @@ namespace DinoDiner.Menu
                             this.Price = 1.49 * 2;
                             this.Calories = 16 * 2;
                         }
+                        NotifyChangeSize();
                         break;
                     case Size.Large:
                         this.Price = 1.99;
@@ -76,6 +101,7 @@ namespace DinoDiner.Menu
                             this.Price = 1.99 * 2;
                             this.Calories = 32 * 2;
                         }
+                        NotifyChangeSize();
                         break;
                 }
             }
@@ -91,6 +117,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -99,6 +127,8 @@ namespace DinoDiner.Menu
         public void Sweeten()
         {
             Sweet = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>

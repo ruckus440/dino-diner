@@ -83,5 +83,12 @@ namespace MenuTest.Sides
             ft.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, ft.Size);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            Fryceritops fryceritops = new Fryceritops();
+            Assert.Empty(fryceritops.Special);
+        }
     }
 }

@@ -83,5 +83,12 @@ namespace MenuTest.Sides
             mmc.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, mmc.Size);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            MeteorMacAndCheese meteorMacAndCheese = new MeteorMacAndCheese();
+            Assert.Empty(meteorMacAndCheese.Special);
+        }
     }
 }

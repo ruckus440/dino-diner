@@ -32,6 +32,14 @@ namespace DinoDiner.Menu
         private bool onion = true;
 
         /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Get the ingredient list and returns it.
         /// </summary>
         public override List<string> Ingredients
@@ -44,6 +52,22 @@ namespace DinoDiner.Menu
                 if (peppers) ingredients.Add("Peppers");
                 if (onion) ingredients.Add("Onion");
                 return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!wholeWheatBun) specials.Add("Hold Whole Wheat Bun");
+                if (!brautwurst) specials.Add("Hold Brautwurst");
+                if (!peppers) specials.Add("Hold Peppers");
+                if (!onion) specials.Add("Hold Onion");
+                return specials.ToArray();
             }
         }
 
@@ -62,6 +86,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.wholeWheatBun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -70,6 +96,8 @@ namespace DinoDiner.Menu
         public void HoldPeppers()
         {
             this.peppers = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -78,6 +106,8 @@ namespace DinoDiner.Menu
         public void HoldOnion()
         {
             this.onion = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -87,6 +117,14 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Brontowurst";
+        }
+
+        /// <summary>
+        /// Method for holding brautwurst.
+        /// </summary>
+        public void HoldBrautwurst()
+        {
+            this.brautwurst = false;
         }
     }
 }

@@ -55,6 +55,89 @@ namespace MenuTest.Entrees
             bw.HoldOnion();
             Assert.DoesNotContain<string>("Onion", bw.Ingredients);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            Brontowurst brontowurst = new Brontowurst();
+            Assert.Empty(brontowurst.Special);
+        }
+
+        [Fact]
+        public void SpecialsShouldHoldBun()
+        {
+            Brontowurst brontowurst = new Brontowurst();
+            brontowurst.HoldBun();
+            Assert.Collection<string>(brontowurst.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Whole Wheat Bun", item);
+                });
+        }
+
+        [Fact]
+        public void SpecialsShouldHoldBrat()
+        {
+            Brontowurst brontowurst = new Brontowurst();
+            brontowurst.HoldBrautwurst();
+            Assert.Collection<string>(brontowurst.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Brautwurst", item);
+                });
+        }
+
+        [Fact]
+        public void SpecialsShouldHoldPeppers()
+        {
+            Brontowurst brontowurst = new Brontowurst();
+            brontowurst.HoldPeppers();
+            Assert.Collection<string>(brontowurst.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Peppers", item);
+                });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldOnion()
+        {
+            Brontowurst brontowurst = new Brontowurst();
+            brontowurst.HoldOnion();
+            Assert.Collection<string>(brontowurst.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Onion", item);
+                });
+        }
+
+        [Fact]
+        public void SpecialShouldHoldAll()
+        {
+            Brontowurst brontowurst = new Brontowurst();
+            brontowurst.HoldBrautwurst();
+            brontowurst.HoldBun();
+            brontowurst.HoldOnion();
+            brontowurst.HoldPeppers();
+            Assert.Collection<string>(brontowurst.Special,
+                item =>
+                {
+                    Assert.Equal("Hold Whole Wheat Bun", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Brautwurst", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Peppers", item);
+                },
+                item =>
+                {
+                    Assert.Equal("Hold Onion", item);
+                }
+                );
+        }
     }
 
 }

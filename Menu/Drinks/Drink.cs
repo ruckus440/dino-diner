@@ -2,13 +2,14 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Drink base class
     /// </summary>
-    public abstract class Drink : IMenuItem, IOrderItem
+    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Gets and sets the price
@@ -24,14 +25,14 @@ namespace DinoDiner.Menu
         /// Gets the ingredient list
         /// </summary>
         public virtual List<string> Ingredients { get; protected set; }
-
+               
         /// <summary>
         /// Gets or sets the size
         /// </summary>
         public abstract Size Size { get; set; }
 
         /// <summary>
-        /// 
+        /// Gets or sets whether to include ice
         /// </summary>
         public virtual bool Ice { get; set; } = true;
 
@@ -43,10 +44,37 @@ namespace DinoDiner.Menu
             this.Ice = false;
         }
 
-        public string[] Special 
+        /// <summary>
+        /// Gets special instructions
+        /// </summary>
+        public abstract string[] Special { get; }
+
+        /// <summary>
+        /// Gets item description
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
+        /// The PropertyChanged event handler; 
+        /// notifies of changes to the Price, Description, 
+        /// and Special properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// Notifies of property changed.
+        /// </summary>
+        /// <param name="propertyName">The changed property</param>
+        protected void NotifyOfPropertyChange(string propertyName)
         {
-            get; 
-        
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void NotifyChangeSize()
+        {
+            NotifyOfPropertyChange("Size");
+            NotifyOfPropertyChange("Calories");
+            NotifyOfPropertyChange("Price");
         }
     }
 }

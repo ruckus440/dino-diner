@@ -2,6 +2,7 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -11,14 +12,32 @@ namespace DinoDiner.Menu
     /// </summary>
     public class JurassicJava : Drink
     {
-        //public double Price { get; set; }
-        //public uint Calories { get; set; }
-        //public List<string> Ingredients { get; set; }
-
         /// <summary>
         /// Private Size backing variable.
         /// </summary>
         private Size size;
+
+        /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special instructions for this order item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (RoomForCream) special.Add("Room for Cream");
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
+            }
+        }
 
         /// <summary>
         /// Gets and Sets Ice.  Defaults to false.
@@ -34,7 +53,10 @@ namespace DinoDiner.Menu
         /// Gets and Sets Decaf.  Defualts to false.
         /// </summary>
         public bool Decaf { get; set; } = false;
-
+                
+        /// <summary>
+        /// Gets the list of ingredients
+        /// </summary>
         public override List<string> Ingredients
         {
             get
@@ -56,14 +78,17 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.Price = .59;
                         this.Calories = 2;
+                        NotifyChangeSize();
                         break;
                     case Size.Medium:
                         this.Price = .99;
                         this.Calories = 4;
+                        NotifyChangeSize();
                         break;
                     case Size.Large:
                         this.Price = 1.49;
                         this.Calories = 8;
+                        NotifyChangeSize();
                         break;
                 }
             }
@@ -79,6 +104,7 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             this.RoomForCream = true;
+            NotifyOfPropertyChange("Special");
         }
 
         /// <summary>
@@ -87,6 +113,8 @@ namespace DinoDiner.Menu
         public void AddIce()
         {
             this.Ice = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -98,6 +126,10 @@ namespace DinoDiner.Menu
             this.Ingredients = new List<string>() { "Water", "Coffee" };
         }
 
+        /// <summary>
+        /// Overrides the default ToString method.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();            

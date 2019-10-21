@@ -2,7 +2,7 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
-
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +11,15 @@ namespace DinoDiner.Menu
     /// </summary>
     public class PterodactylWings : Entree
     {
+
+        /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }        
+
         /// <summary>
         /// Overrides the Ingredients property from Entree.
         /// </summary>
@@ -20,6 +29,18 @@ namespace DinoDiner.Menu
             {
                 List<string> ingredients = new List<string>() { "Chicken", "Wing Sauce" };
                 return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                string[] str = new string[0];
+                return str;
             }
         }
 

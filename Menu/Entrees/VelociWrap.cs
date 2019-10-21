@@ -26,6 +26,14 @@ namespace DinoDiner.Menu
         private bool cheese = true;
 
         /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
         /// Overrides the Ingredients property in Entree.
         /// </summary>        
         public override List<string> Ingredients
@@ -41,12 +49,27 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!dressing) specials.Add("Hold Ceasar Dressing");
+                if (!lettuce) specials.Add("Hold Lettuce");
+                if (!cheese) specials.Add("Hold Cheese");
+                return specials.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Class constructor.  Sets the Price and Calories.
         /// </summary>
         public VelociWrap()
         {
             this.Price = 6.86;
-            this.Calories = 356;            
+            this.Calories = 356;
         }
 
         /// <summary>
@@ -55,6 +78,8 @@ namespace DinoDiner.Menu
         public void HoldDressing()
         {
             this.dressing = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -63,6 +88,8 @@ namespace DinoDiner.Menu
         public void HoldLettuce()
         {
             this.lettuce = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -71,6 +98,8 @@ namespace DinoDiner.Menu
         public void HoldCheese()
         {
             this.cheese = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -81,5 +110,7 @@ namespace DinoDiner.Menu
         {
             return "Veloci-Wrap";
         }
+
+
     }
 }

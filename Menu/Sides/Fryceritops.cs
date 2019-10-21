@@ -23,6 +23,14 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Returns an empty string array for special instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get { return new string[0]; }
+        }
+
+        /// <summary>
         /// Sets the Size property for this side.
         /// </summary>
         private Size size;
@@ -36,14 +44,17 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.Price = .99;
                         this.Calories = 222;
+                        NotifyChangeSize();
                         break;
                     case Size.Medium:
                         this.Price = 1.45;
                         this.Calories = 365;
+                        NotifyChangeSize();
                         break;
                     case Size.Large:
                         this.Price = 1.95;
                         this.Calories = 480;
+                        NotifyChangeSize();
                         break;
                 }
             }
@@ -67,7 +78,15 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return this.Size.ToString() + " Friceritops";
+            return this.Size.ToString() + " Fryceritops";
+        }
+
+        /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
         }
     }
 }

@@ -3,14 +3,13 @@
  * Modified by: Mike Ruckert
  */
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Represents the Prehistoric PBJ entree menu item.  Inherits from the Entree class.
     /// </summary>
-    public class PrehistoricPBJ : Entree, INotifyPropertyChanged
+    public class PrehistoricPBJ : Entree
     {
         /// <summary>
         /// Boolean to indicate whether peanut butter is held.
@@ -22,19 +21,6 @@ namespace DinoDiner.Menu
         /// </summary>
         private bool jelly = true;
 
-        /// <summary>
-        /// The PropertyChanged event handler; 
-        /// notifies of changes to the Price, Description, 
-        /// and Special properties
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        // Helper function for notifying of property changes
-        private void NotifyOfPropertyChange(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        
         /// <summary>
         /// Overrides the Entree Ingredients property.
         /// </summary>
@@ -76,7 +62,6 @@ namespace DinoDiner.Menu
             this.jelly = false;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
-
         }
 
         /// <summary>
@@ -92,15 +77,15 @@ namespace DinoDiner.Menu
         /// Gets and sets the description
         /// </summary>
         /// <returns></returns>
-        public string Description
+        public override string Description
         {
-            get { return this.ToString();  }
+            get { return this.ToString(); }
         }
 
         /// <summary>
         /// Gets any special preparation instructions
         /// </summary>
-        public string[] Special
+        public override string[] Special
         {
             get
             {

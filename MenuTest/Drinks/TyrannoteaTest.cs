@@ -209,5 +209,36 @@ namespace MenuTest.Drinks
             tea.Sweeten();
             Assert.Contains<string>("Cane Sugar", tea.Ingredients);
         }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            Assert.Empty(tea.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldAddLemon()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.AddLemon();
+            Assert.Collection<string>(tea.Special,
+                item =>
+                {
+                    Assert.Equal("Add Lemon", item);
+                });
+        }
+
+        [Fact]
+        public void SpeicalShouldHaveSweet()
+        {
+            Tyrannotea tea = new Tyrannotea();
+            tea.Sweeten();
+            Assert.Collection<string>(tea.Special,
+                item =>
+                {
+                    Assert.Equal("Add Cane Sugar", item);
+                });
+        }
     }
 }

@@ -2,6 +2,7 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -28,7 +29,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Indicates whether mustard is included in Ingredients.
         /// </summary>
-        private bool mustard = true;
+        private bool mustard = true;        
 
         /// <summary>
         /// Overrides Ingredients in Entree.
@@ -47,6 +48,22 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+                if (!bun) specials.Add("Hold Whole Wheat Bun");
+                if (!pickle) specials.Add("Hold Pickle");
+                if (!ketchup) specials.Add("Hold Ketchup");
+                if (!mustard) specials.Add("Hold Mustard");
+                return specials.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Class constructor.  Sets the Price and Calories.
         /// </summary>
         public SteakosaurusBurger()
@@ -61,6 +78,8 @@ namespace DinoDiner.Menu
         public void HoldBun()
         {
             this.bun = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -69,6 +88,8 @@ namespace DinoDiner.Menu
         public void HoldPickle()
         {
             this.pickle = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -77,6 +98,8 @@ namespace DinoDiner.Menu
         public void HoldKetchup()
         {
             this.ketchup = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -85,6 +108,8 @@ namespace DinoDiner.Menu
         public void HoldMustard()
         {
             this.mustard = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -94,6 +119,14 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return "Steakosaurus Burger";
+        }
+
+        /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
         }
     }
 }

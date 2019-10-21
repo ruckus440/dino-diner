@@ -3,6 +3,7 @@
  */
 
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -15,7 +16,17 @@ namespace DinoDiner.Menu
         /// Indicates the number of nuggets in the default order.
         /// </summary>
         public uint numNuggs = 6;
-                
+
+        public uint extraNuggs = 0;
+
+        /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }        
+
         /// <summary>
         /// Gets the Ingredients.
         /// </summary>
@@ -27,6 +38,25 @@ namespace DinoDiner.Menu
                 for (int i = 0; i < numNuggs; i++)
                     ingredients.Add("Chicken Nugget");
                 return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Gets any special preparation instructions
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> specials = new List<string>();
+
+                if (extraNuggs > 0)
+                {
+                    specials.Add($"{extraNuggs} Extra Nuggets");
+                    return specials.ToArray();
+                }
+                else
+                    return specials.ToArray();
             }
         }
 
@@ -47,6 +77,9 @@ namespace DinoDiner.Menu
             this.Price += .25;
             this.Calories += 59;
             numNuggs++;
+            extraNuggs++;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>

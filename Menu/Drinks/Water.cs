@@ -11,14 +11,49 @@ namespace DinoDiner.Menu
     public class Water : Drink
     {
         /// <summary>
+        /// Returns the description of this order item
+        /// </summary>
+        public override string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Gets any special instructions for this order item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (Lemon) special.Add("Add Lemon");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Gets and sets lemon property
         /// </summary>
         public bool Lemon { get; set; } = false;
 
         /// <summary>
+        /// Private backing size variable
+        /// </summary>
+        private Size size;
+
+        /// <summary>
         /// Gets and sets the size property
         /// </summary>
-        public override Size Size { get; set; }
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                NotifyOfPropertyChange("Size");
+            }
+        }
 
         /// <summary>
         /// Gets the Ingredients list
@@ -37,6 +72,8 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             this.Lemon = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>
@@ -54,8 +91,10 @@ namespace DinoDiner.Menu
         /// </summary>
         /// <returns></returns>
         public override string ToString()
-        {            
+        {
             return this.Size.ToString() + " Water";
         }
+
+
     }
 }

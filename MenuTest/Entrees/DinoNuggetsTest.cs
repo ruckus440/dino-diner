@@ -49,18 +49,6 @@ namespace MenuTest.Entrees
             }
             Assert.Equal<int>(7, nuggetCount);
             Assert.Equal<int>(7, dn.Ingredients.Count);
-            /*
-            dn.AddNugget();
-            // Should be 8 nuggets
-            nuggetCount = 0;
-            foreach (string ingredient in dn.Ingredients)
-            {
-                if (ingredient.Equals("Chicken Nugget")) nuggetCount++;
-            }
-            Assert.Equal<int>(8, nuggetCount);
-            Assert.Equal<int>(8, dn.Ingredients.Count);
-            */
-
         }
 
         [Fact]
@@ -85,6 +73,40 @@ namespace MenuTest.Entrees
             Assert.Equal<uint>(dn.Calories, 59*8);
             dn.AddNugget();
             Assert.Equal<uint>(dn.Calories, 59*9);
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialListByDefault()
+        {
+            DinoNuggets dino = new DinoNuggets();
+            Assert.Empty(dino.Special);
+        }
+
+        [Fact]
+        public void SpecialShouldAdd1Nugget()
+        {
+            DinoNuggets dino = new DinoNuggets();
+            dino.AddNugget();
+            Assert.Collection<string>(dino.Special,
+                item =>
+                {
+                    Assert.Equal($"{dino.extraNuggs} Extra Nuggets", item);
+                });            
+        }
+
+        [Fact]
+        public void SpecialShouldAddManyNuggets()
+        {
+            DinoNuggets dino = new DinoNuggets();
+            dino.AddNugget();
+            dino.AddNugget();
+            dino.AddNugget();
+            dino.AddNugget();
+            Assert.Collection<string>(dino.Special,
+                item =>
+                {
+                    Assert.Equal($"{dino.extraNuggs} Extra Nuggets", item);
+                });
         }
     }
 }
