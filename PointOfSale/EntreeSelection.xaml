@@ -19,7 +19,7 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button Click="EntreeSelect">
+        <Button Click="AddBrontowurst">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
@@ -30,7 +30,7 @@
             </DockPanel>
         </Button>
 
-        <Button Click="EntreeSelect">
+        <Button Click="AddDinoNuggets">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
@@ -41,7 +41,7 @@
             </DockPanel>
         </Button>
 
-        <Button Click="EntreeSelect">
+        <Button Click="AddSteakosaurusBurger">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
@@ -52,7 +52,7 @@
             </DockPanel>
         </Button>
 
-        <Button Click="EntreeSelect">
+        <Button Click="AddTRexKingBurger">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
@@ -63,7 +63,7 @@
             </DockPanel>
         </Button>
 
-        <Button Click="EntreeSelect">
+        <Button Click="AddPterodactylWings">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
@@ -74,14 +74,14 @@
             </DockPanel>
         </Button>
 
-        <Button>
+        <Button Click="AddPrehistoricPBJ">
             <Button.Background>
                 <ImageBrush ImageSource= "Assets/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
             Prehistoric PB&amp;J Combo
         </Button>
 
-        <Button Click="EntreeSelect">
+        <Button Click="AddVelociWrap">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
             </Button.Background>

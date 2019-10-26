@@ -69,25 +69,29 @@
 
 
         <StackPanel Orientation="Vertical">
-            <RadioButton Style="{StaticResource radioStyle}" >Small</RadioButton>
-            <RadioButton Style="{StaticResource radioStyle}">Medium</RadioButton>
-            <RadioButton Style="{StaticResource radioStyle}">Large</RadioButton>
-
+            <RadioButton Name="MakeSmall"  
+                         Click="SelectSmall"
+                         Style="{StaticResource radioStyle}" >Small</RadioButton>
+            <RadioButton Name="MakeMedium" 
+                         Click="SelectMedium"
+                         Style="{StaticResource radioStyle}">Medium</RadioButton>
+            <RadioButton Name="MakeLarge"
+                         Click="SelectLarge"
+                         Style="{StaticResource radioStyle}">Large</RadioButton>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Column="1">
-            <Button Style="{StaticResource buttonStyle}" Click="SideSelect">
+            <Button Name="BtnAddFryceritops" Click="AddFryceritops" Style="{StaticResource buttonStyle}">
                 <TextBlock>
                     Fryceritops
                 </TextBlock>                
             </Button>
-            <Button Style="{StaticResource buttonStyle}" Click="SideSelect">
+            <Button Name="BtnAddMeteorMac" Click="AddMeteorMac" Style="{StaticResource buttonStyle}">
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center">
                     Meteor Mac and Cheese
                 </TextBlock>
             </Button>
-            <Button Style="{StaticResource buttonStyle}" Click="SideSelect">Mezzorella Sticks</Button>
-            <Button Style="{StaticResource buttonStyle}" Click="SideSelect">Triceritots</Button>
+            <Button Name="BtnAddMezzoSticks" Click="AddMezzoSticks" Style="{StaticResource buttonStyle}">Mezzorella Sticks</Button>
+            <Button Name="BtnTriceritots" Click="AddTriceritots" Style="{StaticResource buttonStyle}">Triceritots</Button>
         </StackPanel>
-
     </Grid>
 </Page>

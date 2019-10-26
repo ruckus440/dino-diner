@@ -11,7 +11,7 @@ namespace MenuTest
         [Fact]
         public void CorrectSubtotalCost()
         {
-            Order order = new Order(0);
+            Order order = new Order();
             Brontowurst brontowurst = new Brontowurst();
             Fryceritops fryceritops = new Fryceritops();
             Sodasaurus sodasaurus = new Sodasaurus();

@@ -117,9 +117,6 @@
             </Border>
         </DockPanel>
 
-
-
-
         <StackPanel Orientation="Vertical" Grid.Row="1">
             <RadioButton Style="{StaticResource radioStyle}" >Small</RadioButton>
             <RadioButton Style="{StaticResource radioStyle}">Medium</RadioButton>
@@ -132,13 +129,13 @@
                     Sodasaurus
                 </TextBlock>
             </Button>
-            <Button Style="{StaticResource buttonStyle}" Click="DrinkSelect">
+            <Button Style="{StaticResource buttonStyle}" Click="AddTyrannoTea">
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center">
                     Tyrannotea
                 </TextBlock>
             </Button>
-            <Button Style="{StaticResource buttonStyle}" Click="DrinkSelect">Jurassic Java</Button>
-            <Button Style="{StaticResource buttonStyle}" Click="DrinkSelect">Water</Button>
+            <Button Style="{StaticResource buttonStyle}" Click="AddJurrasicJava">Jurassic Java</Button>
+            <Button Style="{StaticResource buttonStyle}" Click="AddWater">Water</Button>
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
