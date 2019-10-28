@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DinoDiner.Menu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        public FlavorSelection()
+        private Sodasaurus sodasaurus = new Sodasaurus();
+        public FlavorSelection(Drink drink)
         {
             InitializeComponent();
+            if (drink is Sodasaurus soda)
+                sodasaurus = soda;
+        }
+
+        public void ClickFlavor(object sender, RoutedEventArgs args)
+        {
+            if (sender is FrameworkElement element)
+            {
+                sodasaurus.Flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
+                NavigationService.Navigate(new DrinkSelection(sodasaurus));
+            }            
         }
     }
 }

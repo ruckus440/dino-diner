@@ -10,12 +10,14 @@ namespace DinoDiner.Menu
     {
 
 
-        private double rate;
+        private double rate = .085;
 
 
         public Order()
         {
             this.SalesTaxRate = rate;
+            Items = new ObservableCollection<IOrderItem>();
+            Items.CollectionChanged += OnCollectionChanged;
         }
 
         public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
@@ -29,10 +31,13 @@ namespace DinoDiner.Menu
                 {
                     sum += item.Price;
                 }
-                if (sum > 0) return sum;
-                return 0;
+                if (sum >= 0) 
+                    return sum;
+                else
+                    return 0;
             }
         }
+
         public double SalesTaxRate { get; protected set; }
 
         public double SalesTaxCost
@@ -64,6 +69,7 @@ namespace DinoDiner.Menu
         {
             item.PropertyChanged += OnCollectionChanged;
             Items.Add(item);
+            
         }
     }
 }

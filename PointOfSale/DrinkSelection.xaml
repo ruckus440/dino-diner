@@ -46,11 +46,9 @@
             <Setter Property= "Margin" Value = "10"/>
             <Setter Property= "Width" Value = "160"/>
             <Setter Property= "Height" Value = "40"/>
-
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type RadioButton}">
-
                         <BulletDecorator Background="White" Cursor="Hand">
                             <BulletDecorator.Bullet>
                                 <Grid Height="40" Width="40">
@@ -62,14 +60,12 @@
                                 <ContentPresenter/>
                             </TextBlock>
                         </BulletDecorator>
-
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="true">
                                 <Setter TargetName="RadioMark" Property="Visibility" Value="Visible"/>
                                 <Setter TargetName="RadioOuter" Property="BorderBrush" Value="#FF008B19" />
                             </Trigger>
                         </ControlTemplate.Triggers>
-
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -84,7 +80,8 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" Grid.Column="0" Margin="60,10,60,10">
@@ -117,10 +114,22 @@
             </Border>
         </DockPanel>
 
+        
+
         <StackPanel Orientation="Vertical" Grid.Row="1">
-            <RadioButton Style="{StaticResource radioStyle}" >Small</RadioButton>
-            <RadioButton Style="{StaticResource radioStyle}">Medium</RadioButton>
-            <RadioButton Style="{StaticResource radioStyle}">Large</RadioButton>
+            <RadioButton Name="MakeSmall"
+                         Click="SelectSmall" 
+                         Style="{StaticResource radioStyle}" >Small</RadioButton>
+            <RadioButton Name="MakeMedium" 
+                         Click="SelectMedium" 
+                         Style="{StaticResource radioStyle}">Medium</RadioButton>
+            <RadioButton Name="MakeLarge" 
+                         Click="SelectLarge" 
+                         Style="{StaticResource radioStyle}">Large</RadioButton>
+            <Button Name="Done"
+                    Click="DrinkDone"
+                    Style="{StaticResource buttonStyle}"
+                    Height="100">Done</Button>
         </StackPanel>
         
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
@@ -139,10 +148,21 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
-            <ToggleButton Style="{StaticResource toggleStyle}">Sweet</ToggleButton>
-            <ToggleButton Style="{StaticResource toggleStyle}">Decaf</ToggleButton>
-            <ToggleButton Style="{StaticResource toggleStyle}">Add Lemon</ToggleButton>
-            <ToggleButton Style="{StaticResource toggleStyle}">Hold Ice</ToggleButton>
+            <Button Click="SelectSweet"
+                    Name="BtnSweet"
+                    Style="{StaticResource buttonStyle}">Sweet</Button>
+            <Button Style="{StaticResource buttonStyle}"
+                    Name="BtnDecaf"
+                    Click="SelectDecaf">Decaf</Button>
+            <Button Style="{StaticResource buttonStyle}"
+                    Name="BtnAddLemon"
+                    Click="SelectLemon">Add Lemon</Button>
+            <Button Style="{StaticResource buttonStyle}"
+                    Name="BtnHoldIce"
+                    Click="SelectHoldIce">Hold Ice</Button>
+            <Button Style="{StaticResource buttonStyle}"
+                    Name="BtnRFCream"
+                    Click="SelectRoomForCream">Room For Cream</Button>
         </StackPanel>
 
     </Grid>

@@ -15,6 +15,7 @@
         </Grid.RowDefinitions>
         <TextBox Text="Order" Grid.Row="0" IsReadOnly="True"/>
         <ListBox Name="OrderItems" 
+                 SelectionChanged="OnSelectionChanged"
                  Grid.Row="1"
                  ItemsSource="{Binding Path=Items}">
             <ListBox.ItemTemplate>
@@ -40,8 +41,12 @@
         </ListBox>
         <Border Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <TextBox Text="Price:"/>
-                <TextBox Text="$_____"/>
+                <TextBox Name="SubTotal"
+                         Text="{Binding Path=SubtotalCost, Mode=OneWay, StringFormat=Sub-total: {0:C}}">
+                </TextBox>
+                <TextBox Name="Total"
+                         Text="{Binding Path=TotalCost, Mode=OneWay, StringFormat=Total: {0:C}}">                    
+                </TextBox>
             </StackPanel>
         </Border>
         <TextBox Text="Buttons Go Here" Grid.Row="3"/>

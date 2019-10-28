@@ -25,7 +25,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock VerticalAlignment="Bottom">
-                    Brontowurst Combo
+                    Brontowurst
                 </TextBlock>
             </DockPanel>
         </Button>
@@ -36,7 +36,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock VerticalAlignment="Bottom">
-                    Dino-Nuggets Combo
+                    Dino-Nuggets
                 </TextBlock>
             </DockPanel>
         </Button>
@@ -47,7 +47,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock VerticalAlignment="Bottom">
-                    Steakosaurus Burger Combo
+                    Steakosaurus Burger
                 </TextBlock>
             </DockPanel>
         </Button>
@@ -58,7 +58,7 @@
             </Button.Background>
             <DockPanel Height="150">
                 <TextBlock VerticalAlignment="Bottom">
-                    T-Rex King Burger Combo
+                    T-Rex King Burger
                 </TextBlock>
             </DockPanel>
         </Button>
@@ -69,7 +69,7 @@
             </Button.Background>
             <DockPanel Height="160">
                 <TextBlock VerticalAlignment="Bottom">
-                    Pterodactyl Wings Combo
+                    Pterodactyl Wings
                 </TextBlock>
             </DockPanel>
         </Button>
@@ -78,14 +78,14 @@
             <Button.Background>
                 <ImageBrush ImageSource= "Assets/DinoDiner-03.png"></ImageBrush>
             </Button.Background>
-            Prehistoric PB&amp;J Combo
+            Prehistoric PB&amp;J
         </Button>
 
         <Button Click="AddVelociWrap">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
             </Button.Background>
-            Velociwrap Combo
+            Velociwrap
         </Button>
     </WrapPanel>
 </Page>

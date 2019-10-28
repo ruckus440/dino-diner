@@ -68,7 +68,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" Grid.Column="0">
             <RadioButton Name="MakeSmall"  
                          Click="SelectSmall"
                          Style="{StaticResource radioStyle}" >Small</RadioButton>
@@ -79,6 +79,7 @@
                          Click="SelectLarge"
                          Style="{StaticResource radioStyle}">Large</RadioButton>
         </StackPanel>
+        
         <StackPanel Orientation="Vertical" Grid.Column="1">
             <Button Name="BtnAddFryceritops" Click="AddFryceritops" Style="{StaticResource buttonStyle}">
                 <TextBlock>

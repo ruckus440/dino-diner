@@ -34,6 +34,7 @@ namespace PointOfSale
                 order.Items.Add(entree);
                 this.Entree = entree;
             }
+            NavigationService.Navigate(new Selection());
         }
 
         public void AddBrontowurst(object sender, RoutedEventArgs args)

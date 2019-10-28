@@ -42,6 +42,7 @@ namespace DinoDiner.Menu
         public void HoldIce()
         {
             this.Ice = false;
+            
         }
 
         /// <summary>
