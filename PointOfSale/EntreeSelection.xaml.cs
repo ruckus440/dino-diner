@@ -31,7 +31,7 @@ namespace PointOfSale
         {
             if (DataContext is Order order)
             {
-                order.Items.Add(entree);
+                order.Add(entree);
                 this.Entree = entree;
             }
             NavigationService.Navigate(new Selection());
@@ -49,7 +49,12 @@ namespace PointOfSale
 
         public void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
-            EntreeSelect(new PrehistoricPBJ());
+            if (DataContext is Order order)
+            {
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                order.Add(pbj);
+                NavigationService.Navigate(new PrehistoricPBJCustomization(pbj));
+            }
         }
 
         public void AddPterodactylWings(object sender, RoutedEventArgs args)

@@ -15,6 +15,14 @@
             x:Name="OrderControl" 
             DockPanel.Dock="Right" Width="200" 
             Background="LightSteelBlue"/>
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Click="OnDone">Go Back</Button>
+        </Grid>
         <Frame Name="OrderUI" 
                Source= "MenuCategorySelection.xaml"
                DataContextChanged="DataContextChange"

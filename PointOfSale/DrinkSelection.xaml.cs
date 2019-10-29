@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -74,7 +75,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 drink.Size = this.size;
-                order.Items.Add(drink);                
+                order.Add(drink);                
                 this.Drink = drink;
             }
             
@@ -103,7 +104,7 @@ namespace PointOfSale
         } 
 
         public void AddTyrannoTea(object sender, RoutedEventArgs args)
-        {
+        {            
             DrinkSelect(new Tyrannotea());
         }
 

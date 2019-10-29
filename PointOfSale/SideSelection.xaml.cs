@@ -33,7 +33,7 @@ namespace PointOfSale
             if (DataContext is Order order)
             {
                 side.Size = this.size;
-                order.Items.Add(side);                
+                order.Add(side);                
                 this.Side = side;
                 NavigationService.Navigate(new Selection());
             }

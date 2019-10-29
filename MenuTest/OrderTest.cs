@@ -15,9 +15,9 @@ namespace MenuTest
             Brontowurst brontowurst = new Brontowurst();
             Fryceritops fryceritops = new Fryceritops();
             Sodasaurus sodasaurus = new Sodasaurus();
-            order.Items.Add(brontowurst);
-            order.Items.Add(fryceritops);
-            order.Items.Add(sodasaurus);
+            order.Add(brontowurst);
+            order.Add(fryceritops);
+            order.Add(sodasaurus);
             Assert.Equal<Double>(7.85, order.SubtotalCost);
         }
     }

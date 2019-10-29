@@ -22,7 +22,7 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="BorderBrush" Value="Gainsboro"/>
                     <Setter Property="Background" Value="White"/>
-                </Trigger>
+                </Trigger>                
             </Style.Triggers>
         </Style>
 
@@ -148,7 +148,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
-            <Button Click="SelectSweet"
+            <Button Click="SelectSweet"                    
                     Name="BtnSweet"
                     Style="{StaticResource buttonStyle}">Sweet</Button>
             <Button Style="{StaticResource buttonStyle}"

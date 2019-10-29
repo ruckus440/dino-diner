@@ -75,6 +75,9 @@
     <Compile Include="OrderControl.xaml.cs">
       <DependentUpon>OrderControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PrehistoricPBJCustomization.xaml.cs">
+      <DependentUpon>PrehistoricPBJCustomization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="OrderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrehistoricPBJCustomization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
