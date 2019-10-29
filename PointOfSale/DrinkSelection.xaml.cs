@@ -35,6 +35,7 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.Drink = drink;
+            /*
             if (drink is Sodasaurus)
             {
                 BtnDecaf.IsEnabled = false;
@@ -67,6 +68,7 @@ namespace PointOfSale
                 BtnSweet.IsEnabled = false;
                 BtnHoldIce.IsEnabled = true;
             }
+            */
 
         }
 
@@ -86,6 +88,7 @@ namespace PointOfSale
             this.size = size;
             if (Drink != null)
                 this.Drink.Size = size;
+
         }
 
         private void FlavorSelect(object sender, RoutedEventArgs e)
@@ -130,38 +133,24 @@ namespace PointOfSale
 
         public void SelectSweet(object sender, RoutedEventArgs args)
         {
-            if (this.Drink is Tyrannotea tea)
-            {
-                if (tea.Sweet == false)
-                    tea.Sweet = true;
-                if (tea.Sweet == true)
-                    tea.Sweet = false;
-            }
+            if (Drink is Tyrannotea tyrannotea)
+                tyrannotea.Sweet = true;
         }
 
         public void SelectHoldIce(object sender, RoutedEventArgs args)
         {
-            if (this.Drink.Ice == true)
-                this.Drink.Ice = false;
-            if (this.Drink.Ice == false)
-                this.Drink.Ice = true;
+            this.Drink.HoldIce();
         }
 
         public void SelectLemon(object sender, RoutedEventArgs args)
         {
             if (this.Drink is Water water)
             {
-                if (water.Lemon == false)
-                    water.Lemon = true;
-                if (water.Lemon == true)
-                    water.Lemon = false;                
+                water.Lemon = true;               
             }
             if (this.Drink is Tyrannotea tea)
             {
-                if (tea.Lemon == false)
-                    tea.Lemon = true;
-                if (tea.Lemon == true)
-                    tea.Lemon = false;
+                tea.Lemon = true;
             }
         }
 
@@ -169,10 +158,7 @@ namespace PointOfSale
         {
             if (this.Drink is JurassicJava java)
             {
-                if (java.Decaf == true)
-                    java.Decaf = false;
-                if (java.Decaf == false)
-                    java.Decaf = true;
+                java.Decaf = true;
             }
         }
 
@@ -180,16 +166,19 @@ namespace PointOfSale
         {
             if (this.Drink is JurassicJava java)
             {
-                if (java.RoomForCream == true)
-                    java.RoomForCream = false;
-                if (java.RoomForCream == false)
-                    java.RoomForCream = true;
+                java.RoomForCream = true;
             }
         }
 
         public void DrinkDone(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new Selection());
+        }
+
+        public void SelectAddIce(object sender, RoutedEventArgs args)
+        {
+            if (this.Drink is JurassicJava java)
+                java.AddIce();
         }
     }
 }

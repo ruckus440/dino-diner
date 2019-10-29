@@ -1,4 +1,7 @@
-﻿using DinoDiner.Menu;
+﻿/* FlavorSelection.xaml.cs
+ * Author: Mike Ruckert
+ */
+using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,20 +25,120 @@ namespace PointOfSale
     public partial class FlavorSelection : Page
     {
         private Sodasaurus sodasaurus = new Sodasaurus();
+        public Drink Drink { get; set; }
         public FlavorSelection(Drink drink)
         {
             InitializeComponent();
-            if (drink is Sodasaurus soda)
-                sodasaurus = soda;
+            Drink = drink;
         }
 
-        public void ClickFlavor(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Sets the flavor to cherry
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectCherry(object sender, RoutedEventArgs args)
         {
-            if (sender is FrameworkElement element)
+            if (Drink is Sodasaurus soda)
             {
-                sodasaurus.Flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
-                NavigationService.Navigate(new DrinkSelection(sodasaurus));
-            }            
+                soda.Flavor = SodasaurusFlavor.Cherry;
+            }
+            NavigationService.GoBack();
         }
+
+        /// <summary>
+        /// Sets the flavor to chocolate
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectChocolate(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Sodasaurus soda)
+            {
+                soda.Flavor = SodasaurusFlavor.Chocolate;
+            }
+            NavigationService.GoBack();
+        }
+
+        /// <summary>
+        /// Sets the flavor to cola
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectCola(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Sodasaurus soda)
+            {
+                soda.Flavor = SodasaurusFlavor.Cola;
+            }
+            NavigationService.GoBack();
+        }
+
+        /// <summary>
+        /// Sets the flavor to lime
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectLime(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Sodasaurus soda)
+            {
+                soda.Flavor = SodasaurusFlavor.Lime;
+            }
+            NavigationService.GoBack();
+        }
+
+        /// <summary>
+        /// Sets the flavor to orange
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectOrange(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Sodasaurus soda)
+            {
+                soda.Flavor = SodasaurusFlavor.Orange;
+            }
+            NavigationService.GoBack();
+        }
+
+        /// <summary>
+        /// Sets the flavor to root beer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectRootBeer(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Sodasaurus soda)
+            {
+                soda.Flavor = SodasaurusFlavor.RootBeer;
+            }
+            NavigationService.GoBack();
+        }
+
+        /// <summary>
+        /// Sets the flavor to vanilla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        public void SelectVanilla(object sender, RoutedEventArgs args)
+        {
+            if (Drink is Sodasaurus soda)
+            {
+                soda.Flavor = SodasaurusFlavor.Vanilla;
+            }
+            NavigationService.GoBack();
+        }
+
+
+
+        //public void ClickFlavor(object sender, RoutedEventArgs args)
+        //{
+        //    if (sender is FrameworkElement element)
+        //    {
+        //        sodasaurus.Flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
+        //        NavigationService.Navigate(new DrinkSelection(sodasaurus));
+        //    }            
+        //}
     }
 }

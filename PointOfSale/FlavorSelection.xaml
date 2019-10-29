@@ -23,25 +23,25 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button Click="ClickFlavor" Tag="Cherry">
+        <Button Click="SelectCola" Tag="Cherry">
             Cherry
         </Button>
-        <Button Click="ClickFlavor" Tag="Chocolate">
+        <Button Click="SelectChocolate" Tag="Chocolate">
             Chocolate
         </Button>
-        <Button Click="ClickFlavor" Tag="Cola">
+        <Button Click="SelectCola" Tag="Cola">
             Cola
         </Button>
-        <Button Click="ClickFlavor" Tag="Lime">
+        <Button Click="SelectLime" Tag="Lime">
             Lime
         </Button>
-        <Button Click="ClickFlavor" Tag="Orange">
+        <Button Click="SelectOrange" Tag="Orange">
             Orange
         </Button>
-        <Button Click="ClickFlavor" Tag="RootBeer">
+        <Button Click="SelectRootBeer" Tag="RootBeer">
             Root Beer
         </Button>
-        <Button Click="ClickFlavor" Tag="Vanilla">
+        <Button Click="SelectVanilla" Tag="Vanilla">
             Vanlla
         </Button>
     </WrapPanel>

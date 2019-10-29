@@ -1,4 +1,7 @@
-﻿using DinoDiner.Menu;
+﻿/* PrehistoricPBJCusomization.xaml.cs
+ * Author: Mike Ruckert
+ */
+using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;

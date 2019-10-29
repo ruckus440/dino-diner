@@ -1,4 +1,7 @@
-﻿using DinoDiner.Menu;
+﻿/* EntreeSelection.xaml.cs
+ * Author: Mike Ruckert
+ */
+using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,16 +40,31 @@ namespace PointOfSale
             NavigationService.Navigate(new Selection());
         }
 
+        /// <summary>
+        /// Click to add brontowurst to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddBrontowurst(object sender, RoutedEventArgs args)
         {
             EntreeSelect(new Brontowurst());
         }
 
+        /// <summary>
+        /// Click to add nuggs to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddDinoNuggets(object sender, RoutedEventArgs args)
         {
             EntreeSelect(new DinoNuggets());
         }
 
+        /// <summary>
+        /// Click to add PBJ to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -57,21 +75,41 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Click to add PterodactylWings to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddPterodactylWings(object sender, RoutedEventArgs args)
         {
             EntreeSelect(new PterodactylWings());
         }
 
+        /// <summary>
+        /// Click to add stekosaurus burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
             EntreeSelect(new SteakosaurusBurger());
         }
 
+        /// <summary>
+        /// Click to add Trex King Burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddTRexKingBurger(object sender, RoutedEventArgs args)
         {
             EntreeSelect(new TRexKingBurger());
         }
 
+        /// <summary>
+        /// Click to add wrap to order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void AddVelociWrap(object sender, RoutedEventArgs args)
         {
             EntreeSelect(new VelociWrap());

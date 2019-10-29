@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="DrinkSelection">
 
     <Page.Resources>
@@ -80,7 +80,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="425"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -133,7 +133,7 @@
         </StackPanel>
         
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1">
-            <Button Style="{StaticResource buttonStyle}" Click="FlavorSelect">
+            <Button Style="{StaticResource buttonStyle}" Click="AddSodaSaurus">
                 <TextBlock>
                     Sodasaurus
                 </TextBlock>
@@ -163,6 +163,12 @@
             <Button Style="{StaticResource buttonStyle}"
                     Name="BtnRFCream"
                     Click="SelectRoomForCream">Room For Cream</Button>
+            <Button Style="{StaticResource buttonStyle}"
+                    Name="BtnAddIce"
+                    Click="SelectAddIce">Add Ice</Button>
+            <Button Style="{StaticResource buttonStyle}"
+                    Click="FlavorSelect"
+                    Name="BtnFlavorSelect">Flavor</Button>                    
         </StackPanel>
 
     </Grid>

@@ -11,6 +11,7 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Tyrannotea : Drink
     {
+        
         /// <summary>
         /// Private backing size variable
         /// </summary>
@@ -116,7 +117,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            Lemon = true;
+            this.Lemon = true;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
         }
@@ -126,7 +127,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void Sweeten()
         {
-            Sweet = true;
+            this.Sweet = true;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
         }
@@ -136,7 +137,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public Tyrannotea()
         {
-            this.Size = Size.Small;
+            //this.Size = Size.Small;
         }
 
         /// <summary>

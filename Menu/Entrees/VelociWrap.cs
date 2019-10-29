@@ -110,7 +110,5 @@ namespace DinoDiner.Menu
         {
             return "Veloci-Wrap";
         }
-
-
     }
 }

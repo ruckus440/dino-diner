@@ -71,6 +71,9 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Notifies properties when the size changes.
+        /// </summary>
         public void NotifyChangeSize()
         {
             NotifyOfPropertyChange("Size");

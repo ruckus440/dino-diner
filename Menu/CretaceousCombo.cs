@@ -99,11 +99,17 @@ namespace DinoDiner.Menu
             return $"{Size} {Entree} Combo";
         }
 
+        /// <summary>
+        /// Gets the description of the item.
+        /// </summary>
         public string Description
         {
             get { return this.ToString();}
         }
 
+        /// <summary>
+        /// Gets the special instruction for the items
+        /// </summary>
         public string[] Special
         {
             get

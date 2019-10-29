@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Size.cs
+ * Author: Mike Ruckert
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

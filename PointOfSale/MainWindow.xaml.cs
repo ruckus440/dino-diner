@@ -29,11 +29,19 @@ namespace PointOfSale
             
         }
         
+        /// <summary>
+        /// This does something maybe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void DataContextChange(object sender, DependencyPropertyChangedEventArgs args)
         {
 
         }
 
+        /// <summary>
+        /// So does this.
+        /// </summary>
         private void SetFrameDataContext()
         {
             FrameworkElement content = OrderUI.Content as FrameworkElement;
@@ -41,6 +49,9 @@ namespace PointOfSale
             content.DataContext = OrderUI.DataContext;
         }
 
+        /// <summary>
+        /// Data binding.  Binds data context.
+        /// </summary>
         private void BindDataContextToPage()
         {
             if(OrderUI.Content is FrameworkElement element)
@@ -49,12 +60,21 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// For data binding.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnLoadComplete(object sender, NavigationEventArgs args)
         {
             BindDataContextToPage();
         }
 
+        /// <summary>
+        /// Click for done button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnDone(object sender, RoutedEventArgs args)
         {
             if (OrderUI.CanGoBack)
