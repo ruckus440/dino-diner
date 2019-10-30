@@ -134,7 +134,7 @@ namespace PointOfSale
         public void SelectSweet(object sender, RoutedEventArgs args)
         {
             if (Drink is Tyrannotea tyrannotea)
-                tyrannotea.Sweet = true;
+                tyrannotea.Sweeten();
         }
 
         public void SelectHoldIce(object sender, RoutedEventArgs args)
