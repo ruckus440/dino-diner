@@ -139,8 +139,8 @@ namespace PointOfSale
 
         public void SelectHoldIce(object sender, RoutedEventArgs args)
         {
-            if (Drink is Drink drink)
-                drink.HoldIce();            
+            if (Drink is Tyrannotea tyrannotea)
+                tyrannotea.HoldIce();            
         }
 
         public void SelectLemon(object sender, RoutedEventArgs args)
@@ -167,7 +167,7 @@ namespace PointOfSale
         {
             if (this.Drink is JurassicJava java)
             {
-                java.LeaveRoomForCream();
+                java.RoomForCream = true;
             }
         }
 

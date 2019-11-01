@@ -75,7 +75,7 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
         }
-                
+
         /// <summary>
         /// Water constructore.  Sets Ingredient list.  Adds lemon if true.
         /// </summary>

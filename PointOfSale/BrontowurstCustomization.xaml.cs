@@ -27,25 +27,5 @@ namespace PointOfSale
             InitializeComponent();
             this.brontowurst = brontowurst;
         }
-
-        private void OnHoldBun()
-        {
-            brontowurst.HoldBun();
-        }
-
-        private void OnHoldBrautwurst()
-        {
-            brontowurst.HoldBrautwurst();
-        }
-
-        private void OnHoldPeppers()
-        {
-            brontowurst.HoldPeppers();
-        }
-
-        private void OnHoldOnions()
-        {
-            brontowurst.HoldOnion();
-        }
     }
 }
