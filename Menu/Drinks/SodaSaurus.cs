@@ -113,6 +113,55 @@ namespace DinoDiner.Menu
             this.Size = Size.Small;
         }
 
+        public void MakeCola()
+        {
+            this.Flavor = SodasaurusFlavor.Cola;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
+        public void MakeOrange()
+        {
+            this.Flavor = SodasaurusFlavor.Orange;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
+        public void MakeVanilla()
+        {
+            this.Flavor = SodasaurusFlavor.Vanilla;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
+        public void MakeChocolate()
+        {
+            this.Flavor = SodasaurusFlavor.Chocolate;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
+        public void MakeRootBeer()
+        {
+            this.Flavor = SodasaurusFlavor.RootBeer;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
+        public void MakeCherry()
+        {
+            this.Flavor = SodasaurusFlavor.Cherry;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
+        public void MakeLime()
+        {
+            this.Flavor = SodasaurusFlavor.Lime;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
         /// <summary>
         /// Overrides the default ToString()
         /// </summary>

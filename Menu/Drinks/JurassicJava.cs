@@ -105,6 +105,7 @@ namespace DinoDiner.Menu
         {
             this.RoomForCream = true;
             NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
 
         /// <summary>

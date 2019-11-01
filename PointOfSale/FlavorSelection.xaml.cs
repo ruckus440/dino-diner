@@ -41,8 +41,9 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.Cherry;
+                soda.MakeCherry();
             }
+
             NavigationService.GoBack();
         }
 
@@ -55,9 +56,11 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.Chocolate;
+                soda.MakeChocolate();
+
             }
             NavigationService.GoBack();
+
         }
 
         /// <summary>
@@ -69,7 +72,7 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.Cola;
+                soda.MakeCola();
             }
             NavigationService.GoBack();
         }
@@ -83,7 +86,7 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.Lime;
+                soda.MakeLime();
             }
             NavigationService.GoBack();
         }
@@ -97,7 +100,7 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.Orange;
+                soda.MakeOrange();
             }
             NavigationService.GoBack();
         }
@@ -111,7 +114,7 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.RootBeer;
+                soda.MakeRootBeer();
             }
             NavigationService.GoBack();
         }
@@ -125,7 +128,7 @@ namespace PointOfSale
         {
             if (Drink is Sodasaurus soda)
             {
-                soda.Flavor = SodasaurusFlavor.Vanilla;
+                soda.MakeVanilla();
             }
             NavigationService.GoBack();
         }
