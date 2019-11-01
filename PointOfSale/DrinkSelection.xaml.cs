@@ -139,18 +139,19 @@ namespace PointOfSale
 
         public void SelectHoldIce(object sender, RoutedEventArgs args)
         {
-            this.Drink.HoldIce();
+            if (Drink is Tyrannotea tyrannotea)
+                tyrannotea.HoldIce();            
         }
 
         public void SelectLemon(object sender, RoutedEventArgs args)
         {
             if (this.Drink is Water water)
             {
-                water.Lemon = true;               
+                water.AddLemon();            
             }
             if (this.Drink is Tyrannotea tea)
             {
-                tea.Lemon = true;
+                tea.AddLemon();
             }
         }
 
@@ -158,7 +159,7 @@ namespace PointOfSale
         {
             if (this.Drink is JurassicJava java)
             {
-                java.Decaf = true;
+                java.MakeDecaf();
             }
         }
 

@@ -117,6 +117,13 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChange("Ingredients");
         }
 
+        public void MakeDecaf()
+        {
+            this.Decaf = true;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
+        }
+
         /// <summary>
         /// JurrasicJava constructor.  Sets ingredients list.
         /// </summary>
