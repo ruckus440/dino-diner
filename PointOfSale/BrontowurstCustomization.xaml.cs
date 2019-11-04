@@ -27,5 +27,35 @@ namespace PointOfSale
             InitializeComponent();
             this.brontowurst = brontowurst;
         }
+
+        private void OnHoldBun(object sender, RoutedEventArgs args)
+        {
+            brontowurst.HoldBun();
+        }
+
+        private void OnHoldBrautwurst(object sender, RoutedEventArgs args)
+        {
+            brontowurst.HoldBrautwurst();
+        }
+
+        private void OnHoldPeppers(object sender, RoutedEventArgs args)
+        {
+            brontowurst.HoldPeppers();
+        }
+
+        private void OnHoldOnion(object sender, RoutedEventArgs args)
+        {
+            brontowurst.HoldOnion();
+        }
+
+        private void OnDone(object sender, RoutedEventArgs args)
+        {
+            if (NavigationService.CanGoBack)
+                NavigationService.GoBack();
+            else
+            {
+                NavigationService.Navigate(new Selection());
+            }
+        }
     }
 }

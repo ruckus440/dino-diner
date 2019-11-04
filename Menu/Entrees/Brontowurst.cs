@@ -125,6 +125,8 @@ namespace DinoDiner.Menu
         public void HoldBrautwurst()
         {
             this.brautwurst = false;
+            NotifyOfPropertyChange("Special");
+            NotifyOfPropertyChange("Ingredients");
         }
     }
 }

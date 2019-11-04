@@ -26,5 +26,35 @@ namespace PointOfSale
             InitializeComponent();
             this.burger = burger;
         }
+
+        private void OnHoldBun(object sender, RoutedEventArgs args)
+        {
+            burger.HoldBun();
+        }
+
+        private void OnHoldKetchup(object sender, RoutedEventArgs args)
+        {
+            burger.HoldKetchup();
+        }
+
+        private void OnHoldMustard(object sender, RoutedEventArgs args)
+        {
+            burger.HoldMustard();
+        }
+
+        private void OnHoldPickle(object sender, RoutedEventArgs args)
+        {
+            burger.HoldPickle();
+        }
+
+        private void OnDone(object sender, RoutedEventArgs args)
+        {
+            if (NavigationService.CanGoBack)
+                NavigationService.GoBack();
+            else
+            {
+                NavigationService.Navigate(new Selection());
+            }
+        }
     }
 }

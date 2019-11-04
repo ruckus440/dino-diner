@@ -27,5 +27,20 @@ namespace PointOfSale
             InitializeComponent();
             this.nuggets = nuggets;
         }
+
+        private void OnAddNugg(object sender, RoutedEventArgs args)
+        {
+            nuggets.AddNugget();
+        }
+
+        private void OnDone(object sender, RoutedEventArgs args)
+        {
+            if (NavigationService.CanGoBack)
+                NavigationService.GoBack();
+            else
+            {
+                NavigationService.Navigate(new Selection());
+            }
+        }
     }
 }
