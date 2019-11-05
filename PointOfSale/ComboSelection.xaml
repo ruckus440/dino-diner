@@ -18,7 +18,7 @@
             </Style>
         </WrapPanel.Resources>
 
-        <Button Click="CustomizeCombo">
+        <Button Click="OnBrontowurstClick">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-01.png"></ImageBrush>
             </Button.Background>
@@ -29,7 +29,7 @@
             </DockPanel>
         </Button>
         
-        <Button Click="CustomizeCombo">
+        <Button Click="OnDinoNuggetClick">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-02.png"></ImageBrush>
             </Button.Background>
@@ -40,7 +40,7 @@
             </DockPanel>
         </Button>
         
-        <Button Click="CustomizeCombo">
+        <Button Click="OnSteakosaurusClick">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-05.png"></ImageBrush>
             </Button.Background>
@@ -51,7 +51,7 @@
             </DockPanel>
         </Button>
         
-        <Button Click="CustomizeCombo">
+        <Button Click="OnTrexKingBurgerClick">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-06.png"></ImageBrush>
             </Button.Background>
@@ -62,7 +62,7 @@
             </DockPanel>
         </Button>
 
-        <Button Click="CustomizeCombo">
+        <Button Click="OnPterodactylWingsClick">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-04.png"></ImageBrush>
             </Button.Background>
@@ -73,14 +73,14 @@
             </DockPanel>
         </Button>
 
-        <Button Click="CustomizeCombo">
+        <Button Click="OnPrehistoricPBJClick">
             <Button.Background>
                 <ImageBrush ImageSource= "Assets/DinoDiner-03.png"></ImageBrush>
             </Button.Background>            
             Prehistoric PB&amp;J Combo
         </Button>
 
-        <Button Click="CustomizeCombo">
+        <Button Click="OnVelociwrapClick">
             <Button.Background>
                 <ImageBrush ImageSource="Assets/DinoDiner-07.png"></ImageBrush>
             </Button.Background>

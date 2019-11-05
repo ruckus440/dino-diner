@@ -22,10 +22,18 @@ namespace PointOfSale
     public partial class VelociWrapCustomization : Page
     {
         private VelociWrap wrap;
+        private bool isCombo = false;
         public VelociWrapCustomization(VelociWrap wrap)
         {
             InitializeComponent();
             this.wrap = wrap;
+        }
+
+        public VelociWrapCustomization(VelociWrap wrap, bool comboBool)
+        {
+            InitializeComponent();
+            this.wrap = wrap;
+            isCombo = comboBool;
         }
 
         private void OnHoldDressing(object sender, RoutedEventArgs args)
@@ -45,7 +53,7 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (isCombo)
                 NavigationService.GoBack();
             else
             {

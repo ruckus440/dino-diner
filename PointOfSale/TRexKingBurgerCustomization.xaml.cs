@@ -22,11 +22,19 @@ namespace PointOfSale
     public partial class TRexKingBurgerCustomization : Page
     {
         private TRexKingBurger burger;
+        private bool isCombo;
         public TRexKingBurgerCustomization(TRexKingBurger burger)
         {
             InitializeComponent();
             this.burger = burger;
             
+        }
+
+        public TRexKingBurgerCustomization(TRexKingBurger burger, bool comboBool)
+        {
+            InitializeComponent();
+            this.burger = burger;
+            isCombo = comboBool;
         }
 
         private void OnHoldBun(object sender, RoutedEventArgs args)
@@ -71,7 +79,7 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (isCombo)
                 NavigationService.GoBack();
             else
             {

@@ -22,10 +22,18 @@ namespace PointOfSale
     public partial class BrontowurstCustomization : Page
     {
         private Brontowurst brontowurst;
+        private bool isCombo = false;
         public BrontowurstCustomization(Brontowurst brontowurst)
         {
             InitializeComponent();
             this.brontowurst = brontowurst;
+        }
+
+        public BrontowurstCustomization(Brontowurst brontowurst, bool comboBool)
+        {
+            InitializeComponent();
+            this.brontowurst = brontowurst;
+            isCombo = comboBool;
         }
 
         private void OnHoldBun(object sender, RoutedEventArgs args)
@@ -50,7 +58,7 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (isCombo)
                 NavigationService.GoBack();
             else
             {

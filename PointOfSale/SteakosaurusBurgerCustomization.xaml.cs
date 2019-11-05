@@ -21,10 +21,18 @@ namespace PointOfSale
     public partial class SteakosaurusBurgerCustomization : Page
     {
         private SteakosaurusBurger burger;
+        private bool isCombo = false;
         public SteakosaurusBurgerCustomization(SteakosaurusBurger burger)
         {
             InitializeComponent();
             this.burger = burger;
+        }
+
+        public SteakosaurusBurgerCustomization(SteakosaurusBurger burger, bool comboBool)
+        {
+            InitializeComponent();
+            this.burger = burger;
+            isCombo = comboBool;
         }
 
         private void OnHoldBun(object sender, RoutedEventArgs args)
@@ -49,7 +57,7 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (isCombo)
                 NavigationService.GoBack();
             else
             {

@@ -25,17 +25,22 @@ namespace PointOfSale
         private DinoDiner.Menu.Size size { get; set; }
 
         public Drink Drink { get; set; }
+        private Drink drink;
+        private CretaceousCombo combo;
         
         public DrinkSelection()
         {
             InitializeComponent();
+            BtnFlavorSelect.IsEnabled = false;
+            BtnAddLemon.IsEnabled = false;
+            BtnAddIce.IsEnabled = false;
+            
         }
 
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
-            this.Drink = drink;
-            /*
+            
             if (drink is Sodasaurus)
             {
                 BtnDecaf.IsEnabled = false;
@@ -68,8 +73,53 @@ namespace PointOfSale
                 BtnSweet.IsEnabled = false;
                 BtnHoldIce.IsEnabled = true;
             }
-            */
+            this.Drink = drink;
+        }
 
+        public DrinkSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            if(combo.Drink is Sodasaurus)
+            {
+                BtnFlavorSelect.IsEnabled = true;
+                BtnAddLemon.IsEnabled = false;
+                BtnAddIce.IsEnabled = false;
+                BtnHoldIce.IsEnabled = true;
+                BtnDecaf.IsEnabled = false;
+                BtnRFCream.IsEnabled = false;
+                BtnSweet.IsEnabled = false;                
+
+            }
+            else if (combo.Drink is Tyrannotea)
+            {
+                BtnFlavorSelect.IsEnabled = true;
+                BtnAddLemon.IsEnabled = true;
+                BtnAddIce.IsEnabled = false;
+                BtnHoldIce.IsEnabled = true;
+                BtnDecaf.IsEnabled = false;
+                BtnRFCream.IsEnabled = false;
+                BtnSweet.IsEnabled = true;
+            }
+            else if (combo.Drink is JurassicJava)
+            {
+                BtnFlavorSelect.IsEnabled = false;
+                BtnAddLemon.IsEnabled = false;
+                BtnAddIce.IsEnabled = true;
+                BtnHoldIce.IsEnabled = false;
+                BtnDecaf.IsEnabled = true;
+                BtnRFCream.IsEnabled = true;
+                BtnSweet.IsEnabled = false;
+            }
+            else if (combo.Drink is Water)
+            {
+                BtnFlavorSelect.IsEnabled = false;
+                BtnAddLemon.IsEnabled = true;
+                BtnHoldIce.IsEnabled = true;
+                BtnAddIce.IsEnabled = false;
+                BtnDecaf.IsEnabled = false;
+                BtnRFCream.IsEnabled = false;
+                BtnSweet.IsEnabled = false;
+            }
         }
 
         public void DrinkSelect(Drink drink)
@@ -79,8 +129,7 @@ namespace PointOfSale
                 drink.Size = this.size;
                 order.Add(drink);                
                 this.Drink = drink;
-            }
-            
+            }            
         }
 
         private void SelectSize(DinoDiner.Menu.Size size)
@@ -88,7 +137,6 @@ namespace PointOfSale
             this.size = size;
             if (Drink != null)
                 this.Drink.Size = size;
-
         }
 
         private void FlavorSelect(object sender, RoutedEventArgs e)

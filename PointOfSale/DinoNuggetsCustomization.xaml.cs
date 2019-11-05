@@ -22,10 +22,18 @@ namespace PointOfSale
     public partial class DinoNuggetsCustomization : Page
     {
         private DinoNuggets nuggets;
+        private bool isCombo = false;
         public DinoNuggetsCustomization(DinoNuggets nuggets)
         {
             InitializeComponent();
             this.nuggets = nuggets;
+        }
+
+        public DinoNuggetsCustomization(DinoNuggets nuggets, bool comboBool)
+        {
+            InitializeComponent();
+            this.nuggets = nuggets;
+            isCombo = comboBool;
         }
 
         private void OnAddNugg(object sender, RoutedEventArgs args)
@@ -35,7 +43,7 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if (NavigationService.CanGoBack)
+            if (isCombo)
                 NavigationService.GoBack();
             else
             {

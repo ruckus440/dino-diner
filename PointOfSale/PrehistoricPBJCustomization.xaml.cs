@@ -25,11 +25,19 @@ namespace PointOfSale
     public partial class PrehistoricPBJCustomization : Page
     {
         private PrehistoricPBJ pbj;
+        private bool isCombo = false;
 
         public PrehistoricPBJCustomization(PrehistoricPBJ pbj)
         {
             InitializeComponent();
             this.pbj = pbj;
+        }
+
+        public PrehistoricPBJCustomization(PrehistoricPBJ pbj, bool comboBool)
+        {
+            InitializeComponent();
+            this.pbj = pbj;
+            isCombo = comboBool;
         }
 
         private void OnHoldPeanutButter(object sender, RoutedEventArgs args)
@@ -44,7 +52,7 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            if(NavigationService.CanGoBack)
+            if(isCombo)
                 NavigationService.GoBack();
             else
             {

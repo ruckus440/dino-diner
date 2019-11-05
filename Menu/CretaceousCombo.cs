@@ -3,21 +3,49 @@
  * Modified by: Mike Ruckert
  */
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     /// <summary>
     /// Gathers entree, drink and side for combo
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         // Backing Variables
         private Size size;
+        private Entree entree;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+
 
         /// <summary>
         /// Gets and sets the entree
         /// </summary>
-        public Entree Entree { get; set; }
+        public Entree Entree
+        {
+            get
+            {
+                return entree;
+            }
+            set
+            {
+                entree = value;
+                entree.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Gets and sets the side

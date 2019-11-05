@@ -30,6 +30,7 @@ namespace PointOfSale
         /// </summary>
         private DinoDiner.Menu.Size size { get; set; }
         public Side Side { get; set; }
+        private CretaceousCombo combo;
         public SideSelection()
         {
             InitializeComponent();
@@ -40,19 +41,30 @@ namespace PointOfSale
             Side = side;
         }
 
+        public SideSelection(CretaceousCombo combo)
+        {
+            InitializeComponent();
+            this.combo = combo;
+        }
+
         /// <summary>
         /// Selects the side and adds it to the order.
         /// </summary>
         /// <param name="side"></param>
         private void SelectSide(Side side)
         {
-            if (DataContext is Order order)
+            if (combo == null)
             {
-                side.Size = this.size;
-                order.Add(side);                
-                this.Side = side;
-                NavigationService.Navigate(new Selection());
+                if (DataContext is Order order)
+                {
+                    side.Size = this.size;
+                    order.Add(side);
+                    this.Side = side;
+                    NavigationService.Navigate(new Selection());
+                }
             }
+            else
+                combo.Side = side;
         }
 
         /// <summary>
@@ -73,7 +85,13 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void AddFryceritops(object sender, RoutedEventArgs args)
         {            
-            SelectSide(new Fryceritops());
+            if (combo == null)
+            {
+                if (DataContext is Order order)
+                {
+                    this.Side = new Fryceritops();
+                }
+            }
         }       
 
         public void AddMeteorMac(object sender, RoutedEventArgs args)

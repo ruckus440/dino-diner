@@ -24,11 +24,17 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
-
+        private Entree entree;
         public Entree Entree { get; set; }
         public EntreeSelection()
         {
             InitializeComponent();
+        }
+
+        public EntreeSelection(Entree entree)
+        {
+            InitializeComponent();
+            this.entree = entree;
         }
 
         //public void EntreeSelect(Entree entree)
