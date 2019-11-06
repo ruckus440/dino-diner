@@ -13,8 +13,9 @@ namespace DinoDiner.Menu
     public class CretaceousCombo : IMenuItem, INotifyPropertyChanged, IOrderItem
     {
         // Backing Variables
-        private Size size;
+        private Size size = Size.Small;
         private Entree entree;
+        private Side side;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -34,7 +35,7 @@ namespace DinoDiner.Menu
             {
                 return entree;
             }
-            set
+            protected set
             {
                 entree = value;
                 entree.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
@@ -50,7 +51,27 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the side
         /// </summary>
-        public Side Side { get; set; } = new Fryceritops();
+        public Side Side
+        {
+            get
+            {
+                return side;// = new Fryceritops();
+            }
+            set
+            {
+                side = value;
+                this.side.Size = this.size;
+                side.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Gets and sets the drink
@@ -120,6 +141,8 @@ namespace DinoDiner.Menu
         public CretaceousCombo(Entree entree)
         {
             this.Entree = entree;
+            this.Side = new Fryceritops();
+            this.Drink = new Sodasaurus();
         }
 
         /// <summary>

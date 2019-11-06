@@ -29,8 +29,8 @@ namespace PointOfSale
         /// Private backing varible.
         /// </summary>
         private DinoDiner.Menu.Size size { get; set; }
-        public Side Side { get; set; }
-        private CretaceousCombo combo;
+        private Side side;
+        public CretaceousCombo combo;
         public SideSelection()
         {
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace PointOfSale
         public SideSelection(Side side)
         {
             InitializeComponent();
-            Side = side;
+            this.side = side;
         }
 
         public SideSelection(CretaceousCombo combo)
@@ -59,7 +59,7 @@ namespace PointOfSale
                 {
                     side.Size = this.size;
                     order.Add(side);
-                    this.Side = side;
+                    this.side = side;
                     NavigationService.Navigate(new Selection());
                 }
             }
@@ -74,8 +74,8 @@ namespace PointOfSale
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             this.size = size;
-            if(Side != null)
-                this.Side.Size = size;
+            if(side != null)
+                this.side.Size = size;
         }
              
         /// <summary>
@@ -89,14 +89,22 @@ namespace PointOfSale
             {
                 if (DataContext is Order order)
                 {
-                    this.Side = new Fryceritops();
+                    this.side = new Fryceritops();
                 }
             }
         }       
 
         public void AddMeteorMac(object sender, RoutedEventArgs args)
         {
-            SelectSide(new MeteorMacAndCheese());
+            //if (combo == null)
+            //    if (DataContext is Order order)
+            //    {
+            //        side = new MeteorMacAndCheese();
+            //        order.Add(side);
+            //    }
+            //else
+                this.combo.Side = new MeteorMacAndCheese();
+
         }
 
         /// <summary>

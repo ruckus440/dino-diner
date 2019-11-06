@@ -49,12 +49,12 @@ namespace PointOfSale
             else if (Combo.Entree is VelociWrap wrap)
                 NavigationService.Navigate(new VelociWrapCustomization(wrap, isCombo));
             else
-                NavigationService.Navigate(new CustomizeCombo(combo));
+                NavigationService.Navigate(new CustomizeCombo(Combo));
         }
 
         public void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(combo));
+            NavigationService.Navigate(new SideSelection(Combo));
         }
 
         public void SelectDrink(object sender, RoutedEventArgs args)
