@@ -65,9 +65,9 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Orientation="Vertical">
-            <RadioButton Style="{StaticResource radioStyle}" >Small</RadioButton>
-            <RadioButton Style="{StaticResource radioStyle}">Medium</RadioButton>
-            <RadioButton Style="{StaticResource radioStyle}">Large</RadioButton>
+            <RadioButton Click="SelectSmall" Style="{StaticResource radioStyle}" >Small</RadioButton>
+            <RadioButton Click="SelectMedium" Style="{StaticResource radioStyle}">Medium</RadioButton>
+            <RadioButton Click="SelectLarge" Style="{StaticResource radioStyle}">Large</RadioButton>
 
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Column="1">

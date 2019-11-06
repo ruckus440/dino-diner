@@ -20,7 +20,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Private backing variable.
         /// </summary>
-        List<IOrderItem> items = new List<IOrderItem>();
+        private List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
         /// The PropertyChanged event handler, notifies when an order property changes

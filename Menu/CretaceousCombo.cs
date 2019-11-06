@@ -90,6 +90,10 @@ namespace DinoDiner.Menu
                 size = value;
                 Drink.Size = value;
                 Side.Size = value;
+                NotifyOfPropertyChange("Size");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -150,6 +154,19 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Drink.Special);
                 return ingredients.ToArray();
             }
+        }
+
+        protected void NotifyOfPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void NotifyChangeSize()
+        {
+            NotifyOfPropertyChange("Size");
+            NotifyOfPropertyChange("Calories");
+            NotifyOfPropertyChange("Price");
+            NotifyOfPropertyChange("Description");
         }
     }
 }
