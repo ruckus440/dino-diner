@@ -76,6 +76,8 @@ namespace PointOfSale
             this.size = size;
             if(side != null)
                 this.side.Size = size;
+            if (combo != null)
+                this.combo.Side.Size = size;
         }
              
         /// <summary>
@@ -84,14 +86,15 @@ namespace PointOfSale
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void AddFryceritops(object sender, RoutedEventArgs args)
-        {            
-            if (combo == null)
-            {
-                if (DataContext is Order order)
-                {
-                    this.side = new Fryceritops();
-                }
-            }
+        {
+            //if (combo == null)
+            //{
+            //    if (DataContext is Order order)
+            //    {
+            //        this.side = new Fryceritops();
+            //    }
+            //}
+            SelectSide(new Fryceritops());
         }       
 
         public void AddMeteorMac(object sender, RoutedEventArgs args)
@@ -102,9 +105,10 @@ namespace PointOfSale
             //        side = new MeteorMacAndCheese();
             //        order.Add(side);
             //    }
-            //else
-                this.combo.Side = new MeteorMacAndCheese();
+            //    else
+            //        this.combo.Side = new MeteorMacAndCheese();
 
+            SelectSide(new MeteorMacAndCheese());
         }
 
         /// <summary>

@@ -22,7 +22,7 @@ namespace PointOfSale
     public partial class CustomizeCombo : Page
     {
         private CretaceousCombo combo;
-        public CretaceousCombo Combo { get; set; }
+        //public CretaceousCombo Combo { get; set; }
         private bool isCombo = true;
         public CustomizeCombo()
         {
@@ -31,30 +31,30 @@ namespace PointOfSale
         public CustomizeCombo(CretaceousCombo combo)
         {
             InitializeComponent();
-            this.Combo = combo;
+            this.combo = combo;
         }
 
         public void SelectEntree(object sender, RoutedEventArgs args)
         {
-            if (Combo.Entree is Brontowurst brontowurst)
+            if (combo.Entree is Brontowurst brontowurst)
                 NavigationService.Navigate(new BrontowurstCustomization(brontowurst, isCombo));
-            else if (Combo.Entree is DinoNuggets nuggets)
+            else if (combo.Entree is DinoNuggets nuggets)
                 NavigationService.Navigate(new DinoNuggetsCustomization(nuggets, isCombo));
-            else if (Combo.Entree is PrehistoricPBJ pBJ)
+            else if (combo.Entree is PrehistoricPBJ pBJ)
                 NavigationService.Navigate(new PrehistoricPBJCustomization(pBJ, isCombo));
-            else if (Combo.Entree is SteakosaurusBurger burger)
+            else if (combo.Entree is SteakosaurusBurger burger)
                 NavigationService.Navigate(new SteakosaurusBurgerCustomization(burger, isCombo));
-            else if (Combo.Entree is TRexKingBurger rex)
+            else if (combo.Entree is TRexKingBurger rex)
                 NavigationService.Navigate(new TRexKingBurgerCustomization(rex, isCombo));
-            else if (Combo.Entree is VelociWrap wrap)
+            else if (combo.Entree is VelociWrap wrap)
                 NavigationService.Navigate(new VelociWrapCustomization(wrap, isCombo));
             else
-                NavigationService.Navigate(new CustomizeCombo(Combo));
+                NavigationService.Navigate(new CustomizeCombo(combo));
         }
 
         public void SelectSide(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SideSelection(Combo));
+            NavigationService.Navigate(new SideSelection(combo));
         }
 
         public void SelectDrink(object sender, RoutedEventArgs args)
@@ -64,17 +64,17 @@ namespace PointOfSale
         
         public void SelectSmall(object sender, RoutedEventArgs args)
         {
-            Combo.Size = DinoDiner.Menu.Size.Small;
+            combo.Size = DinoDiner.Menu.Size.Small;
         }
 
         public void SelectMedium(object sender, RoutedEventArgs args)
         {
-            Combo.Size = DinoDiner.Menu.Size.Medium;
+            combo.Size = DinoDiner.Menu.Size.Medium;
         }
 
         public void SelectLarge(object sender, RoutedEventArgs args)
         {
-            Combo.Size = DinoDiner.Menu.Size.Large;
+            combo.Size = DinoDiner.Menu.Size.Large;
         }
     }
 }
