@@ -2,7 +2,6 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -18,7 +17,7 @@ namespace DinoDiner.Menu
         public override string Description
         {
             get { return this.ToString(); }
-        }        
+        }
 
         /// <summary>
         /// Overrides the Ingredients property from Entree.

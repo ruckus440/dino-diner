@@ -2,21 +2,9 @@
  * Author: Mike Ruckert
  */
 using DinoDiner.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Media;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale
 {
@@ -25,9 +13,6 @@ namespace PointOfSale
     /// </summary>
     public partial class DrinkSelection : Page
     {
-        //private DinoDiner.Menu.Size size { get; set; }
-        //public Drink Drink { get; set; }
-
         /// <summary>
         /// Private backing variable for drink
         /// </summary>
@@ -49,7 +34,7 @@ namespace PointOfSale
             InitializeComponent();
             BtnFlavorSelect.IsEnabled = false;
             BtnAddLemon.IsEnabled = false;
-            BtnIce.IsEnabled = false;            
+            BtnIce.IsEnabled = false;
         }
 
         /// <summary>
@@ -59,7 +44,7 @@ namespace PointOfSale
         public DrinkSelection(Drink drink)
         {
             InitializeComponent();
-            
+
             if (drink is Sodasaurus)
             {
                 BtnRFCream.IsEnabled = false;
@@ -206,7 +191,7 @@ namespace PointOfSale
                     Sodasaurus soda = (Sodasaurus)combo.Drink;
                     NavigationService.Navigate(new FlavorSelection(soda));
                 }
-                
+
             }
         }
 
@@ -220,7 +205,7 @@ namespace PointOfSale
             if (combo == null)
             {
                 if (DataContext is Order order)
-                {                    
+                {
                     drink = new Sodasaurus();
                     drink.Size = this.size;
                     order.Add(drink);
@@ -254,7 +239,7 @@ namespace PointOfSale
                     java.Size = this.size;
                     order.Add(java);
                     this.drink = java;
-                    
+
                     BtnFlavorSelect.IsEnabled = true;
                     BtnAddLemon.IsEnabled = false;
                     BtnIce.IsEnabled = true;
@@ -267,7 +252,7 @@ namespace PointOfSale
                 BtnAddLemon.IsEnabled = false;
                 BtnIce.IsEnabled = true;
             }
-        } 
+        }
 
         /// <summary>
         /// Add tea to the order
@@ -275,7 +260,7 @@ namespace PointOfSale
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void AddTyrannoTea(object sender, RoutedEventArgs args)
-        {            
+        {
             if (combo == null)
             {
                 if (DataContext is Order order)
@@ -351,18 +336,7 @@ namespace PointOfSale
         public void SelectLarge(object sender, RoutedEventArgs args)
         {
             SelectSize(DinoDiner.Menu.Size.Large);
-        }
-
-        ///// <summary>
-        ///// S
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="args"></param>
-        //public void SelectSweet(object sender, RoutedEventArgs args)
-        //{
-        //    if (drink is Tyrannotea tyrannotea)
-        //        tyrannotea.Sweeten();
-        //}
+        }       
 
         /// <summary>
         /// Adds or holds the ice
@@ -373,19 +347,18 @@ namespace PointOfSale
         {
             if (combo == null)
             {
-                if (drink is JurassicJava java)                
-                    java.AddIce();                
+                if (drink is JurassicJava java)
+                    java.AddIce();
                 else
                     drink.HoldIce();
             }
             else
             {
-                if (combo.Drink is JurassicJava java)                
-                    java.AddIce();                
+                if (combo.Drink is JurassicJava java)
+                    java.AddIce();
                 else
                     combo.Drink.HoldIce();
             }
-                       
         }
 
         /// <summary>
@@ -405,17 +378,14 @@ namespace PointOfSale
                     water.AddLemon();
                 }
             }
+            else
+            {
+                if (combo.Drink is Tyrannotea tyrannotea)
+                    tyrannotea.AddLemon();
+                else if (combo.Drink is Water water)
+                    water.AddLemon();               
+            }
         }
-
-
-        //public void SelectDecaf(object sender, RoutedEventArgs args)
-        //{
-        //    if (this.drink is JurassicJava java)
-        //    {
-        //        java.MakeDecaf();
-        //    }
-        //}
-
 
         /// <summary>
         /// Adds room for cream to the drink
@@ -439,7 +409,5 @@ namespace PointOfSale
         {
             NavigationService.Navigate(new Selection());
         }
-
-        
     }
 }

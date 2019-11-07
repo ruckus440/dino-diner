@@ -2,21 +2,10 @@
  * Author: Mike Ruckert
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -93,12 +82,12 @@ namespace PointOfSale
         private void SelectSize(DinoDiner.Menu.Size size)
         {
             this.size = size;
-            if(side != null)
+            if (side != null)
                 this.side.Size = size;
             if (combo != null)
                 this.combo.Side.Size = size;
         }
-             
+
         /// <summary>
         /// Adds Fryceritops to the order
         /// </summary>
@@ -114,7 +103,7 @@ namespace PointOfSale
             //    }
             //}
             SelectSide(new Fryceritops());
-        }       
+        }
 
         public void AddMeteorMac(object sender, RoutedEventArgs args)
         {

@@ -23,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class Selection : Page
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Selection()
         {
             InitializeComponent();

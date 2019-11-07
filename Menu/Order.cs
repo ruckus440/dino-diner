@@ -1,11 +1,8 @@
 ﻿/* Order.cs
  * Auther: Mike Ruckert
  */
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Text;
 
 namespace DinoDiner.Menu
 {
@@ -32,19 +29,19 @@ namespace DinoDiner.Menu
         /// </summary>
         public Order()
         {
-            
+
         }
 
         /// <summary>
         /// The array of items to display.
         /// </summary>
-        public IOrderItem[] Items 
+        public IOrderItem[] Items
         {
             get
             {
                 return items.ToArray();
-            }           
-        } 
+            }
+        }
 
         /// <summary>
         /// Caclulates the Subtotal
@@ -58,7 +55,7 @@ namespace DinoDiner.Menu
                 {
                     sum += item.Price;
                 }
-                if (sum >= 0) 
+                if (sum >= 0)
                     return sum;
                 else
                     return 0;
@@ -68,13 +65,13 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the tax rate.
         /// </summary>
-        public double SalesTaxRate 
+        public double SalesTaxRate
         {
             get
             {
                 return rate;
             }
-            protected set { } 
+            protected set { }
         }
 
         /// <summary>
@@ -98,7 +95,7 @@ namespace DinoDiner.Menu
                 return SubtotalCost + SalesTaxCost;
             }
         }
-                     
+
         /// <summary>
         /// Adds the item to the order.  Notifies property changed.
         /// </summary>
@@ -145,7 +142,5 @@ namespace DinoDiner.Menu
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SalesTaxCost"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotalCost"));
         }
-
-        
     }
 }

@@ -2,7 +2,6 @@
  * Author: Mike Ruckert
  */
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -53,7 +52,7 @@ namespace DinoDiner.Menu
         /// Gets and Sets Decaf.  Defualts to false.
         /// </summary>
         public bool Decaf { get; set; } = false;
-                
+
         /// <summary>
         /// Gets the list of ingredients
         /// </summary>
@@ -139,7 +138,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();            
+            StringBuilder sb = new StringBuilder();
             sb.Append(this.Size.ToString() + " ");
             if (Decaf)
                 sb.Append("Decaf ");

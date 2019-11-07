@@ -198,11 +198,18 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Triggers whenever a property changes to update the Order Control
+        /// </summary>
+        /// <param name="propertyName"></param>
         protected void NotifyOfPropertyChange(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Is called whenver a size changes to update the Order Control
+        /// </summary>
         public void NotifyChangeSize()
         {
             NotifyOfPropertyChange("Size");

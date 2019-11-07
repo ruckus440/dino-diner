@@ -3,7 +3,6 @@
  */
 
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -25,7 +24,7 @@ namespace DinoDiner.Menu
         public override string Description
         {
             get { return this.ToString(); }
-        }        
+        }
 
         /// <summary>
         /// Gets the Ingredients.

@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* MainWindow.xaml.cs
+ * Author: Mike Ruckert
+ */
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using DinoDiner.Menu;
 
 
 namespace PointOfSale
@@ -26,11 +16,11 @@ namespace PointOfSale
         {
             InitializeComponent();
             OrderControl.NavigationService = OrderUI.NavigationService;
-            
+
         }
-        
+
         /// <summary>
-        /// This does something maybe
+        /// Notifies when the data context changes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -40,7 +30,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// So does this.
+        /// Sets the data context
         /// </summary>
         private void SetFrameDataContext()
         {
@@ -54,7 +44,7 @@ namespace PointOfSale
         /// </summary>
         private void BindDataContextToPage()
         {
-            if(OrderUI.Content is FrameworkElement element)
+            if (OrderUI.Content is FrameworkElement element)
             {
                 element.DataContext = OrderUI.DataContext;
             }
@@ -84,14 +74,7 @@ namespace PointOfSale
                 OrderUI.NavigationService.Navigate(new Selection());
             }
         }
-
-       
-
-
-
         // Everytime we load a page we need to know what it's data context is
         // Everytime a page changes we need to notify it's data context changed
-
-
     }
 }

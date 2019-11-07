@@ -58,9 +58,7 @@ namespace DinoDiner.Menu
                 if (Sweet) special.Add("Add Cane Sugar");
                 return special.ToArray();
             }
-        }
-
-        
+        }               
 
         /// <summary>
         /// Gets the list of ingredients

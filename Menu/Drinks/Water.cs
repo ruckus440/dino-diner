@@ -95,7 +95,5 @@ namespace DinoDiner.Menu
         {
             return this.Size.ToString() + " Water";
         }
-
-
     }
 }

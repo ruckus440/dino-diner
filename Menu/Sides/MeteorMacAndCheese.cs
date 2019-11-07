@@ -3,7 +3,6 @@
  */
 
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {

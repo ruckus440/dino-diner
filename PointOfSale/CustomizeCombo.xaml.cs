@@ -1,18 +1,10 @@
-﻿using DinoDiner.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* CustomizeCombo.xaml.cs
+ * Author: Mike Ruckert
+ */
+using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale
 {
@@ -21,19 +13,38 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeCombo : Page
     {
+        /// <summary>
+        /// Private backing variable for CretaceousCombo
+        /// </summary>
         private CretaceousCombo combo;
-        //public CretaceousCombo Combo { get; set; }
+        /// <summary>
+        /// Indicates whether this is part of a combo
+        /// </summary>
         private bool isCombo = true;
+
+        /// <summary>
+        /// No arg constructor
+        /// </summary>
         public CustomizeCombo()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Constructor for combo
+        /// </summary>
+        /// <param name="combo"></param>
         public CustomizeCombo(CretaceousCombo combo)
         {
             InitializeComponent();
             this.combo = combo;
         }
 
+        /// <summary>
+        /// Selects the entree when the respective button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectEntree(object sender, RoutedEventArgs args)
         {
             if (combo.Entree is Brontowurst brontowurst)
@@ -52,26 +63,51 @@ namespace PointOfSale
                 NavigationService.Navigate(new CustomizeCombo(combo));
         }
 
+        /// <summary>
+        /// Goes to the side selection menu when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectSide(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new SideSelection(combo));
         }
 
+        /// <summary>
+        /// Goes to the drink selection menu when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectDrink(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection(combo));
         }
         
+        /// <summary>
+        /// Selects small when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectSmall(object sender, RoutedEventArgs args)
         {
             combo.Size = DinoDiner.Menu.Size.Small;
         }
 
+        /// <summary>
+        /// Selects medium when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectMedium(object sender, RoutedEventArgs args)
         {
             combo.Size = DinoDiner.Menu.Size.Medium;
         }
 
+        /// <summary>
+        /// Selects large when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void SelectLarge(object sender, RoutedEventArgs args)
         {
             combo.Size = DinoDiner.Menu.Size.Large;

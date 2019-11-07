@@ -3,7 +3,6 @@
  */
 
 using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,7 +10,7 @@ namespace DinoDiner.Menu
     /// Represents the MezzorellaSticks side menu item.  Inherits from the Side class.
     /// </summary>
     public class MezzorellaSticks : Side
-    {        
+    {
         /// <summary>
         /// Gets the list of ingredients
         /// </summary>

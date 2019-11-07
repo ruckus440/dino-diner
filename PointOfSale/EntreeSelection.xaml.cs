@@ -2,20 +2,9 @@
  * Author: Mike Ruckert
  */
 using DinoDiner.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale
 {
@@ -24,28 +13,32 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// Private backing variable for Entree
+        /// </summary>
         private Entree entree;
+        /// <summary>
+        /// Getter setter for Entree
+        /// </summary>
         public Entree Entree { get; set; }
+
+        /// <summary>
+        /// No arg constructor
+        /// </summary>
         public EntreeSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Entree constructor
+        /// </summary>
+        /// <param name="entree"></param>
         public EntreeSelection(Entree entree)
         {
             InitializeComponent();
             this.entree = entree;
-        }
-
-        //public void EntreeSelect(Entree entree)
-        //{
-        //    if (DataContext is Order order)
-        //    {
-        //        order.Add(entree);
-        //        this.Entree = entree;
-        //    }
-        //    NavigationService.Navigate(new Selection());
-        //}
+        }        
 
         /// <summary>
         /// Click to add brontowurst to order
@@ -103,7 +96,6 @@ namespace PointOfSale
             {
                 PterodactylWings wings = new PterodactylWings();
                 order.Add(wings);
-                //NavigationService.Navigate(new PterodactylWingsCustomization(wings));
             }
         }
 

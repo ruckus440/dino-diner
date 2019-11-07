@@ -1,18 +1,10 @@
-﻿using DinoDiner.Menu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* ComboSelection.xaml.cs
+ * Author: Mike Ruckert
+ */
+using DinoDiner.Menu;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PointOfSale
 {
@@ -21,11 +13,19 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        /// <summary>
+        /// No arg constructor
+        /// </summary>
         public ComboSelection()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Selects a Brontowurst combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnBrontowurstClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -37,6 +37,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Selects a Dino Nuggets combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnDinoNuggetClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -48,6 +53,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Selects a Steakosaurus combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSteakosaurusClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -59,6 +69,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Selects a T-Rex King Burger combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnTrexKingBurgerClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -70,6 +85,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Selects a Pterodactyl Wings combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnPterodactylWingsClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -81,6 +101,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Selects a Prehistoric PB&J combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnPrehistoricPBJClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -92,6 +117,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Selects a VelociWrap combo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnVelociwrapClick(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
