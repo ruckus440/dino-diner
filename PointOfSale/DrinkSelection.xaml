@@ -158,14 +158,12 @@
                     Name="BtnAddLemon"
                     Click="SelectLemon">Add Lemon</Button>
             <Button Style="{StaticResource buttonStyle}"
-                    Name="BtnHoldIce"
-                    Click="SelectHoldIce">Hold Ice</Button>
+                    Name="BtnIce"
+                    Click="SelectIce">Add/Hold Ice</Button>
             <Button Style="{StaticResource buttonStyle}"
                     Name="BtnRFCream"
                     Click="SelectRoomForCream">Room For Cream</Button>
-            <Button Style="{StaticResource buttonStyle}"
-                    Name="BtnAddIce"
-                    Click="SelectAddIce">Add Ice</Button>
+            
             <Button Style="{StaticResource buttonStyle}"
                     Click="FlavorSelect"
                     Name="BtnFlavorSelect">Flavor</Button>                    

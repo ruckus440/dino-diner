@@ -26,21 +26,40 @@ namespace PointOfSale
     public partial class SideSelection : Page
     {
         /// <summary>
-        /// Private backing varible.
+        /// Private backing variable for size
         /// </summary>
         private DinoDiner.Menu.Size size { get; set; }
+        /// <summary>
+        /// Private backing variable for side
+        /// </summary>
         private Side side;
-        public CretaceousCombo combo;
+        /// <summary>
+        /// Private backing variable for combo
+        /// </summary>
+        private CretaceousCombo combo;
+
+        /// <summary>
+        /// No arg constructor
+        /// </summary>
         public SideSelection()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Constructor for when arriving via Side menu
+        /// </summary>
+        /// <param name="side"></param>
         public SideSelection(Side side)
         {
             InitializeComponent();
             this.side = side;
         }
 
+        /// <summary>
+        /// Constructor for when ariving via Combo menu
+        /// </summary>
+        /// <param name="combo"></param>
         public SideSelection(CretaceousCombo combo)
         {
             InitializeComponent();
