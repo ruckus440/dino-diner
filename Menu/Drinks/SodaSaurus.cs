@@ -12,9 +12,14 @@ namespace DinoDiner.Menu
     public class Sodasaurus : Drink
     {
         /// <summary>
-        /// Sets default flavor to Cola
+        /// Private backing flavor variable
         /// </summary>
-        private SodasaurusFlavor flavor = SodasaurusFlavor.Cola;
+        private SodasaurusFlavor flavor;// = SodasaurusFlavor.Cola;
+
+        /// <summary>
+        /// Private backing Size variable
+        /// </summary>
+        private Size size;
 
         /// <summary>
         /// Gets and Sets the Flavor
@@ -28,6 +33,7 @@ namespace DinoDiner.Menu
             set
             {
                 flavor = value;
+                NotifyOfPropertyChange("Description");
             }
         }
 
@@ -40,12 +46,7 @@ namespace DinoDiner.Menu
             {
                 return new List<string>() { "Water", "Natural Flavors", "Cane Sugar" };
             }
-        }
-
-        /// <summary>
-        /// Private backing Size variable
-        /// </summary>
-        private Size size;
+        }        
 
         /// <summary>
         /// Returns the description of this order item
@@ -78,6 +79,10 @@ namespace DinoDiner.Menu
         /// </summary>
         public override Size Size
         {
+            get
+            {
+                return size;
+            }
             set
             {
                 size = value;
@@ -86,24 +91,24 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         this.Price = 1.50;
                         this.Calories = 112;
-                        NotifyChangeSize();
+                        //NotifyChangeSize();
                         break;
                     case Size.Medium:
                         this.Price = 2.00;
                         this.Calories = 156;
-                        NotifyChangeSize();
+                        //NotifyChangeSize();
                         break;
                     case Size.Large:
                         this.Price = 2.50;
                         this.Calories = 208;
-                        NotifyChangeSize();
+                        //NotifyChangeSize();
                         break;
                 }
-            }
-            get
-            {
-                return size;
-            }
+                NotifyOfPropertyChange("Price");
+                NotifyOfPropertyChange("Calories");
+                NotifyOfPropertyChange("Description");
+                NotifyChangeSize();
+            }            
         }
         /// <summary>
         /// Sodasaurus constructor.  Sets default ingredients.

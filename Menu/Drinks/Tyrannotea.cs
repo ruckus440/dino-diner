@@ -18,6 +18,26 @@ namespace DinoDiner.Menu
         private Size size;
 
         /// <summary>
+        /// Getter and setter to indicate Sweet
+        /// </summary>
+        public bool Sweet { get; set; }// = false;
+
+        /// <summary>
+        /// Getter and setter to indicate Lemon
+        /// </summary>
+        public bool Lemon { get; set; }
+
+        /// <summary>
+        /// Tyrannotea constructor.  Builds Ingredients.
+        /// </summary>
+        public Tyrannotea()
+        {
+            this.Size = Size.Small;
+            this.Sweet = false;
+            this.Ingredients = new List<string>() { "Water", "Tea" };
+        }
+
+        /// <summary>
         /// Returns the description of this order item
         /// </summary>
         public override string Description
@@ -40,15 +60,7 @@ namespace DinoDiner.Menu
             }
         }
 
-        /// <summary>
-        /// Getter and setter to indicate Sweet
-        /// </summary>
-        public bool Sweet { get; set; }
-
-        /// <summary>
-        /// Getter and setter to indicate Lemon
-        /// </summary>
-        public bool Lemon { get; set; }
+        
 
         /// <summary>
         /// Gets the list of ingredients
@@ -130,16 +142,9 @@ namespace DinoDiner.Menu
             this.Sweet = true;
             NotifyOfPropertyChange("Special");
             NotifyOfPropertyChange("Ingredients");
+            NotifyOfPropertyChange("Description");
         }
-
-        /// <summary>
-        /// Tyrannotea constructor.  Builds Ingredients.
-        /// </summary>
-        public Tyrannotea()
-        {
-            //this.Size = Size.Small;
-        }
-
+      
         /// <summary>
         /// Overrides the default ToString()
         /// </summary>
@@ -148,7 +153,7 @@ namespace DinoDiner.Menu
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Size.ToString() + " ");
-            if (this.Sweet)
+            if (Sweet)
                 sb.Append("Sweet ");
             sb.Append("Tyrannotea");
             return sb.ToString();

@@ -51,6 +51,7 @@ namespace DinoDiner.Menu
             set
             {
                 size = value;
+                NotifyChangeSize();
                 NotifyOfPropertyChange("Size");
             }
         }

@@ -147,13 +147,7 @@
             <Button Style="{StaticResource buttonStyle}" Click="AddWater">Water</Button>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
-            <Button Click="SelectSweet"                    
-                    Name="BtnSweet"
-                    Style="{StaticResource buttonStyle}">Sweet</Button>
-            <Button Style="{StaticResource buttonStyle}"
-                    Name="BtnDecaf"
-                    Click="SelectDecaf">Decaf</Button>
+        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">                        
             <Button Style="{StaticResource buttonStyle}"
                     Name="BtnAddLemon"
                     Click="SelectLemon">Add Lemon</Button>
@@ -163,10 +157,10 @@
             <Button Style="{StaticResource buttonStyle}"
                     Name="BtnRFCream"
                     Click="SelectRoomForCream">Room For Cream</Button>
-            
             <Button Style="{StaticResource buttonStyle}"
                     Click="FlavorSelect"
-                    Name="BtnFlavorSelect">Flavor</Button>                    
+                    FontSize="17"
+                    Name="BtnFlavorSelect">Flavor/Decaf/Sweet</Button>                    
         </StackPanel>
 
     </Grid>

@@ -24,12 +24,21 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
-        private Sodasaurus sodasaurus = new Sodasaurus();
-        public Drink Drink { get; set; }
-        public FlavorSelection(Drink drink)
+        private Sodasaurus soda;
+
+        public FlavorSelection()
         {
             InitializeComponent();
-            Drink = drink;
+        }
+        public FlavorSelection(Sodasaurus sodasaurus)
+        {
+            InitializeComponent();
+            this.soda = sodasaurus;
+        }
+
+        void SelectBack(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new DrinkSelection());
         }
 
         /// <summary>
@@ -39,10 +48,7 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectCherry(object sender, RoutedEventArgs args)
         {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.Cherry;
-            }
+            soda.Flavor = SodasaurusFlavor.Cherry;
             NavigationService.GoBack();
         }
 
@@ -52,12 +58,9 @@ namespace PointOfSale
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void SelectChocolate(object sender, RoutedEventArgs args)
-        {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.Chocolate;
-            }
-            NavigationService.GoBack();
+        {            
+            soda.Flavor = SodasaurusFlavor.Chocolate;
+            NavigationService.Navigate(new DrinkSelection());
         }
 
         /// <summary>
@@ -66,12 +69,10 @@ namespace PointOfSale
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void SelectCola(object sender, RoutedEventArgs args)
-        {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.Cola;
-            }
-            NavigationService.GoBack();
+        {            
+            soda.Flavor = SodasaurusFlavor.Cola;
+            NavigationService.Navigate(new DrinkSelection());
+
         }
 
         /// <summary>
@@ -81,11 +82,9 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectLime(object sender, RoutedEventArgs args)
         {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.Lime;
-            }
-            NavigationService.GoBack();
+           
+            soda.Flavor = SodasaurusFlavor.Lime;
+            NavigationService.Navigate(new DrinkSelection());
         }
 
         /// <summary>
@@ -94,12 +93,9 @@ namespace PointOfSale
         /// <param name="sender"></param>
         /// <param name="args"></param>
         public void SelectOrange(object sender, RoutedEventArgs args)
-        {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.Orange;
-            }
-            NavigationService.GoBack();
+        {            
+            soda.Flavor = SodasaurusFlavor.Orange;
+            NavigationService.Navigate(new DrinkSelection());
         }
 
         /// <summary>
@@ -109,11 +105,10 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectRootBeer(object sender, RoutedEventArgs args)
         {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.RootBeer;
-            }
-            NavigationService.GoBack();
+            
+            soda.Flavor = SodasaurusFlavor.RootBeer;
+            NavigationService.Navigate(new DrinkSelection());
+
         }
 
         /// <summary>
@@ -123,11 +118,8 @@ namespace PointOfSale
         /// <param name="args"></param>
         public void SelectVanilla(object sender, RoutedEventArgs args)
         {
-            if (Drink is Sodasaurus soda)
-            {
-                soda.Flavor = SodasaurusFlavor.Vanilla;
-            }
-            NavigationService.GoBack();
+            soda.Flavor = SodasaurusFlavor.Vanilla;
+            NavigationService.Navigate(new DrinkSelection());
         }
 
 

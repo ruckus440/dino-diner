@@ -16,6 +16,7 @@ namespace DinoDiner.Menu
         private Size size = Size.Small;
         private Entree entree;
         private Side side;
+        private Drink drink;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -23,8 +24,6 @@ namespace DinoDiner.Menu
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-
 
         /// <summary>
         /// Gets and sets the entree
@@ -76,7 +75,27 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets and sets the drink
         /// </summary>
-        public Drink Drink { get; set; } = new Sodasaurus();
+        public Drink Drink
+        {
+            get
+            {
+                return drink;
+            }
+            set
+            {
+                drink = value;
+                this.drink.Size = this.size;
+                Drink.PropertyChanged += (object sender, PropertyChangedEventArgs args) =>
+                {
+                    NotifyOfPropertyChanged(args.PropertyName);
+                };
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
+            }
+        }
 
         /// <summary>
         /// Gets the price of the combo
@@ -151,7 +170,7 @@ namespace DinoDiner.Menu
         /// <returns></returns>
         public override string ToString()
         {
-            return $"{Size} {Entree} Combo";
+            return $"{Entree} Combo";
         }
 
         /// <summary>
