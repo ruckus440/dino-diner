@@ -1,0 +1,83 @@
+﻿@page
+@model Website.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+}
+  
+<h1>Menu</h1>
+<h2>Combos</h2>
+@foreach (var combo in Model.Menu.AvailableCombos)
+{
+    <div class="menu-item">
+        <h3>@combo.ToString(): </h3>
+        <p style="margin-left: 40px">
+            Price: $@combo.Price<br />
+            Calories: @combo.Calories<br />
+            Ingredients:
+            <ul>
+                @foreach (var ingredient in combo.Ingredients)
+                {
+                    <li style="margin-left: 40px">@ingredient</li>
+                }
+            </ul>
+        </p>
+    </div>
+}
+
+<h2>Entrees</h2>
+@foreach (var entree in Model.Menu.AvailableEntrees)
+{
+    <div class="menu-item">
+        <h3>@entree.ToString(): </h3>
+        <p style="margin-left: 40px">
+            Price: $@entree.Price<br />
+            Calories: @entree.Calories<br />
+            Ingredients:
+            <ul>
+                @foreach (var ingredient in entree.Ingredients)
+                {
+                    <li style="margin-left: 40px">@ingredient</li>
+                }
+            </ul>
+        </p>
+    </div>
+}
+
+<h2>Sides</h2>
+@foreach (var side in Model.Menu.AvailableSides)
+{
+    <div class="menu-item">
+        <h3>@side.ToString(): </h3>
+        <p style="margin-left: 40px">
+            Price: $@side.Price<br />
+            Calories: @side.Calories<br />
+            Ingredients:
+            <ul>
+                @foreach (var ingredient in side.Ingredients)
+                {
+                    <li style="margin-left: 40px">@ingredient</li>
+                }
+            </ul>
+        </p>
+    </div>
+}
+
+<h2>Drinks</h2>
+@foreach (var drink in Model.Menu.AvailableDrinks)
+{
+    <div class="menu-item">
+        <h3>@drink.ToString(): </h3>
+        <p style="margin-left: 40px">
+            Price: $@drink.Price<br />
+            Calories: @drink.Calories<br />
+            Ingredients:
+            <ul>
+                @foreach (var ingredient in drink.Ingredients)
+                {
+                    <li style="margin-left: 40px">@ingredient</li>
+                }
+            </ul>
+        </p>
+    </div>
+}
+
