@@ -16,3 +16,23 @@ body {
     margin-left: 40px;
 }
 
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+form {
+    background-color: lightgray;
+    padding: 20px;
+    /*! width: 200px; */
+}
+
+#results {
+    padding: 20px;
+}
+
+#category {
+    display: flex;
+    flex-direction: column;
+}
+

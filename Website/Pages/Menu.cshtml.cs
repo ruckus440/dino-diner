@@ -13,6 +13,11 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
+        [BindProperty]
+        public string search { get; set; }
+
+        //public List<>
+
         /// <summary>
         /// Private backing variable
         /// </summary>
