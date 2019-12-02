@@ -46,8 +46,9 @@
             }
 
             <h2>Sides</h2>
-            @foreach (var side in Model.Menu.AvailableSides)
+            @foreach (var side in Model.list)
             {
+                if ()
                 <div class="menu-item">
                     <h3>@side.ToString(): </h3>
                     <p style="margin-left: 40px">
@@ -91,6 +92,7 @@
             </div>
             <input type="submit" name="filter" id="filter" value="Apply Filters" />
 
+            <h4>Menu Category</h4>
             <div id="category">
                 <label>
                     <input class="menu-category" type="checkbox" name="menuCategory" value="Combo" />
@@ -108,6 +110,23 @@
                     <input class="menu-category" type="checkbox" name="menuCategory" value="Drink" />
                     Drink
                 </label>
+            </div>
+
+            <h4>Price</h4>
+            <div id="price">
+                <label>
+                    Min
+                    <input type="number" min="0" max="10" step="0.01" name="minPrice" />
+                </label>
+                <label>
+                    Min
+                    <input type="number" min="0" max="10" step="0.01" name="maxPrice" />
+                </label>
+            </div>
+
+            <h4>Excluding Ingredients</h4>
+            <div id="exclude">
+
             </div>
         </form>
     </div>

@@ -1,7 +1,9 @@
 ﻿/* Menu.cs
  * Author: Mike Ruckert
  */
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -11,19 +13,37 @@ namespace DinoDiner.Menu
     /// </summary>
     public class Menu
     {
+        public static List<IMenuItem> Search(List<IMenuItem> allMenuItems, string term)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+
+            foreach (IMenuItem item in allMenuItems)
+            {
+                if (item.ToString().Contains(term))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
+
         /// <summary>
         /// Collects all available menu items
         /// </summary>
-        public List<List<IMenuItem>> AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
-                List<List<IMenuItem>> list = new List<List<IMenuItem>>
-                {
-                    AvailableEntrees,
-                    AvailableDrinks,
-                    AvailableSides
-                };
+                List<IMenuItem> list = new List<IMenuItem>();
+                foreach (IMenuItem item in AvailableEntrees)
+                    list.Add(item);
+                foreach (IMenuItem item in AvailableSides)
+                    list.Add(item);
+                foreach (IMenuItem item in AvailableDrinks)
+                    list.Add(item);
+
                 return list;
             }
         }

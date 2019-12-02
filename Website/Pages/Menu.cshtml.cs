@@ -16,12 +16,20 @@ namespace Website.Pages
         [BindProperty]
         public string search { get; set; }
 
+        [BindProperty]
+        public float? minPrice { get; set; }
+
+        [BindProperty]
+        public float? maxPrice { get; set; }
+
         //public List<>
 
         /// <summary>
         /// Private backing variable
         /// </summary>
-        private Menu menu;
+        private Menu menu = new Menu();
+
+        public List<IMenuItem> list;
 
         /// <summary>
         /// Read only Menu property
@@ -33,7 +41,15 @@ namespace Website.Pages
         /// </summary>
         public void OnGet()
         {
+            //list = Menu.AvailableMenuItems;
             menu = new Menu();
+        }
+
+        public void OnPost()
+        {
+            menu = new Menu();
+            if (search != null)
+                list = Menu.Search(menu.AvailableMenuItems, search);
         }
     }
 }
