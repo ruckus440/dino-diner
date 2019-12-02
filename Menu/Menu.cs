@@ -17,7 +17,6 @@ namespace DinoDiner.Menu
         {
             List<IMenuItem> results = new List<IMenuItem>();
 
-
             foreach (IMenuItem item in allMenuItems)
             {
                 if (item.ToString().Contains(term))
@@ -25,7 +24,24 @@ namespace DinoDiner.Menu
                     results.Add(item);
                 }
             }
+            return results;
+        }
 
+        public static List<IMenuItem> FilterByCategory(List<IMenuItem> allMenuItems, List<string> category)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            foreach (IMenuItem item in allMenuItems)
+            {
+                if (category.Contains("Combo") && item is CretaceousCombo)
+                    results.Add(item);
+                if (category.Contains("Entree") && item is Entree)
+                    results.Add(item);
+                if (category.Contains("Side") && item is Side)
+                    results.Add(item);
+                if (category.Contains("Drink") && item is Drink)
+                    results.Add(item);
+            }
             return results;
         }
 
@@ -43,7 +59,8 @@ namespace DinoDiner.Menu
                     list.Add(item);
                 foreach (IMenuItem item in AvailableDrinks)
                     list.Add(item);
-
+                foreach (IMenuItem item in AvailableCombos)
+                    list.Add(item);
                 return list;
             }
         }

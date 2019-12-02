@@ -22,6 +22,9 @@ namespace Website.Pages
         [BindProperty]
         public float? maxPrice { get; set; }
 
+        [BindProperty]
+        public List<string> menuCategory { get; set; } = new List<string>();
+
         //public List<>
 
         /// <summary>
@@ -41,15 +44,18 @@ namespace Website.Pages
         /// </summary>
         public void OnGet()
         {
-            //list = Menu.AvailableMenuItems;
+            list = Menu.AvailableMenuItems;
             menu = new Menu();
         }
 
         public void OnPost()
         {
+            list = Menu.AvailableMenuItems;
             menu = new Menu();
             if (search != null)
                 list = Menu.Search(menu.AvailableMenuItems, search);
+            if (menuCategory.Count != 0)
+                list = Menu.FilterByCategory(menu.AvailableMenuItems, menuCategory); 
         }
     }
 }

@@ -3,12 +3,15 @@
 @{
     ViewData["Title"] = "Menu";
 }
-  
-    <div id="container">
-        <div id="results">
-            <h1>Menu</h1>
-            <h2>Combos</h2>
-            @foreach (var combo in Model.Menu.AvailableCombos)
+@using DinoDiner.Menu;
+
+<div id="container">
+    <div id="results">
+        <h1>Menu</h1>
+        <h2>Combos</h2>
+        @foreach (var item in Model.list)
+        {
+            if (item is CretaceousCombo combo)
             {
                 <div class="menu-item">
                     <h3>@combo.ToString(): </h3>
@@ -25,10 +28,14 @@
                     </p>
                 </div>
             }
+        }
 
-            <h2>Entrees</h2>
-            @foreach (var entree in Model.Menu.AvailableEntrees)
+        <h2>Entrees</h2>
+        @foreach (var item in Model.list)
+        {
+            if (item is Entree entree)
             {
+
                 <div class="menu-item">
                     <h3>@entree.ToString(): </h3>
                     <p style="margin-left: 40px">
@@ -44,11 +51,13 @@
                     </p>
                 </div>
             }
+        }
 
-            <h2>Sides</h2>
-            @foreach (var side in Model.list)
+        <h2>Sides</h2>
+        @foreach (var item in Model.list)
+        {
+            if (item is Side side)
             {
-                if ()
                 <div class="menu-item">
                     <h3>@side.ToString(): </h3>
                     <p style="margin-left: 40px">
@@ -65,9 +74,14 @@
                 </div>
             }
 
-            <h2>Drinks</h2>
-            @foreach (var drink in Model.Menu.AvailableDrinks)
+        }
+
+        <h2>Drinks</h2>
+        @foreach (var item in Model.list)
+        {
+            if (item is Drink drink)
             {
+
                 <div class="menu-item">
                     <h3>@drink.ToString(): </h3>
                     <p style="margin-left: 40px">
@@ -83,51 +97,52 @@
                     </p>
                 </div>
             }
+        }
+    </div>
+
+    <form method="post">
+        <div>
+            <input type="text" name="search" value="@Model.search" />
+            <input type="submit" value="Search" />
+        </div>
+        <input type="submit" name="filter" id="filter" value="Apply Filters" />
+
+        <h4>Menu Category</h4>
+        <div id="category">
+            <label>
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Combo" />
+                Combo
+            </label>
+            <label>
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Entree" />
+                Entree
+            </label>
+            <label>
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Side" />
+                Side
+            </label>
+            <label>
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Drink" />
+                Drink
+            </label>
         </div>
 
-        <form method="post">
-            <div>
-                <input type="text" name="search" value="@Model.search" />
-                <input type="submit" value="Search" />
-            </div>
-            <input type="submit" name="filter" id="filter" value="Apply Filters" />
+        <h4>Price</h4>
+        <div id="price">
+            <label>
+                Min
+                <input type="number" min="0" max="10" step="0.01" name="minPrice" />
+            </label>
+            <label>
+                Min
+                <input type="number" min="0" max="10" step="0.01" name="maxPrice" />
+            </label>
+        </div>
 
-            <h4>Menu Category</h4>
-            <div id="category">
-                <label>
-                    <input class="menu-category" type="checkbox" name="menuCategory" value="Combo" />
-                    Combo
-                </label>
-                <label>
-                    <input class="menu-category" type="checkbox" name="menuCategory" value="Entree" />
-                    Entree
-                </label>
-                <label>
-                    <input class="menu-category" type="checkbox" name="menuCategory" value="Side" />
-                    Side
-                </label>
-                <label>
-                    <input class="menu-category" type="checkbox" name="menuCategory" value="Drink" />
-                    Drink
-                </label>
-            </div>
+        <h4>Excluding Ingredients</h4>
+        <div id="exclude">
 
-            <h4>Price</h4>
-            <div id="price">
-                <label>
-                    Min
-                    <input type="number" min="0" max="10" step="0.01" name="minPrice" />
-                </label>
-                <label>
-                    Min
-                    <input type="number" min="0" max="10" step="0.01" name="maxPrice" />
-                </label>
-            </div>
-
-            <h4>Excluding Ingredients</h4>
-            <div id="exclude">
-
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
