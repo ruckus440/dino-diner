@@ -108,21 +108,21 @@
         <input type="submit" name="filter" id="filter" value="Apply Filters" />
 
         <h4>Menu Category</h4>
-        <div id="category">
+        <div id="category" >
             <label>
-                <input class="menu-category" type="checkbox" name="menuCategory" value="Combo" />
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Combo"  checked="@Model.menuCategory.Contains("Combo")" />
                 Combo
             </label>
             <label>
-                <input class="menu-category" type="checkbox" name="menuCategory" value="Entree" />
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Entree" checked="@Model.menuCategory.Contains("Entree")" />
                 Entree
             </label>
             <label>
-                <input class="menu-category" type="checkbox" name="menuCategory" value="Side" />
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Side" checked="@Model.menuCategory.Contains("Side")" />
                 Side
             </label>
             <label>
-                <input class="menu-category" type="checkbox" name="menuCategory" value="Drink" />
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Drink" checked="@Model.menuCategory.Contains("Drink")" />
                 Drink
             </label>
         </div>
@@ -131,17 +131,23 @@
         <div id="price">
             <label>
                 Min
-                <input type="number" min="0" max="10" step="0.01" name="minPrice" />
+                <input type="number" min="0" max="10" step="0.01" name="minPrice" placeholder="$0.00" value="@Model.minPrice"/>
             </label>
             <label>
-                Min
-                <input type="number" min="0" max="10" step="0.01" name="maxPrice" />
+                Max
+                <input type="number" min="0" max="10" step="0.01" name="maxPrice" placeholder="$0.00" value="@Model.maxPrice"/>
             </label>
         </div>
 
         <h4>Excluding Ingredients</h4>
-        <div id="exclude">
-
+        <div class="exclude-ingredient">
+            @foreach(string ingredient in Model.PossibleIngredients)
+            {
+                <label>
+                    <input type="checkbox" name="ingredients" value="@ingredient" checked="@Model.ingredients.Contains(ingredient)" style="margin-bottom: 5px"/>
+                    @ingredient
+                </label>
+            }
         </div>
     </form>
 </div>

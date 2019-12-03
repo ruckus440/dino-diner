@@ -13,25 +13,49 @@ namespace Website.Pages
 {
     public class MenuModel : PageModel
     {
+        /// <summary>
+        /// Backing variable
+        /// </summary>
+        public Menu menu = new Menu();
+
+        /// <summary>
+        /// Binds search to html search field
+        /// </summary>
         [BindProperty]
         public string search { get; set; }
 
+        /// <summary>
+        /// Binds minimum price to html number input
+        /// </summary>
         [BindProperty]
         public float? minPrice { get; set; }
 
+        /// <summary>
+        /// Binds maximum prics to html number input
+        /// </summary>
         [BindProperty]
         public float? maxPrice { get; set; }
 
+        /// <summary>
+        /// Bind category to html checkboxes
+        /// </summary>
         [BindProperty]
         public List<string> menuCategory { get; set; } = new List<string>();
 
-        //public List<>
+        /// <summary>
+        /// Binds ingredients to html 
+        /// </summary>
+        [BindProperty]
+        public List<string> ingredients { get; set; } = new List<string>();
 
         /// <summary>
-        /// Private backing variable
+        /// Getter for possible ingredient HashSet
         /// </summary>
-        private Menu menu = new Menu();
+        public HashSet<string> PossibleIngredients { get { return menu.PossibleIngredients; } }
 
+        /// <summary>
+        /// Backing variable
+        /// </summary>
         public List<IMenuItem> list;
 
         /// <summary>
@@ -45,17 +69,22 @@ namespace Website.Pages
         public void OnGet()
         {
             list = Menu.AvailableMenuItems;
-            menu = new Menu();
         }
 
+        /// <summary>
+        /// Functionality for search and filter options
+        /// </summary>
         public void OnPost()
         {
             list = Menu.AvailableMenuItems;
-            menu = new Menu();
             if (search != null)
-                list = Menu.Search(menu.AvailableMenuItems, search);
+                list = Menu.Search(list, search);
             if (menuCategory.Count != 0)
-                list = Menu.FilterByCategory(menu.AvailableMenuItems, menuCategory); 
+                list = Menu.FilterByCategory(list, menuCategory);
+            if (minPrice != null || maxPrice != null)
+                list = Menu.FilterByPrice(list, minPrice, maxPrice);
+            if (ingredients.Count != 0)
+                list = Menu.FilterByIngredients(list, ingredients);
         }
     }
 }
