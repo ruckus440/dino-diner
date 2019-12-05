@@ -73,7 +73,18 @@ namespace DinoDiner.Menu
         public static List<IMenuItem> FilterByPrice(List<IMenuItem> menuItems, float? minPrice, float? maxPrice)
         {
             List<IMenuItem> results = new List<IMenuItem>();
+            IEnumerable<IMenuItem> query = null;
 
+            if (minPrice.HasValue && maxPrice == null)
+                query = menuItems.Where(item => item.Price >= minPrice);
+            if (maxPrice.HasValue && minPrice == null)
+                query = menuItems.Where(item => item.Price <= maxPrice);
+            if (minPrice.HasValue && minPrice.HasValue)
+                query = menuItems.Where(item => item.Price >= minPrice && item.Price <= maxPrice);
+
+            foreach (IMenuItem item in query)
+                results.Add(item);
+            /*
             foreach (IMenuItem item in menuItems)
             {
                 if (minPrice.HasValue && maxPrice == null && item.Price >= minPrice)
@@ -83,6 +94,7 @@ namespace DinoDiner.Menu
                 if (minPrice.HasValue && minPrice.HasValue && item.Price >= minPrice && item.Price <= maxPrice)
                     results.Add(item);
             }
+            */
             return results;
         }
 
@@ -96,15 +108,32 @@ namespace DinoDiner.Menu
         public static List<IMenuItem> FilterByIngredients(List<IMenuItem> menuItems, List<string> ingredients)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-
+            /*
             foreach (IMenuItem item in menuItems)
+                results.Add(item);
+            IEnumerable<IMenuItem> query = null;
+            List<IMenuItem> qToList = null;
+
+            foreach (string ingredient in ingredients)
             {
-                foreach (string ingredient in ingredients)
+                query = menuItems.Where(item => (item.Ingredients.Contains(ingredient)));
+                qToList = query.ToList();
+            }
+            foreach (IMenuItem r in qToList)
+                results.Remove(r);
+                */
+
+            
+            foreach (IMenuItem item in menuItems)
+                results.Add(item);
+            for (int i = 0; i < results.Count; i++)
+            {
+                foreach (var _ in ingredients.Where(s => results[i].Ingredients.Contains(s)).Select(s => new { }))
                 {
-                    if (!item.Ingredients.Contains(ingredient))
-                        results.Add(item);
+                    results.Remove(results[i]);
                 }
             }
+            
             return results;
         }
 
