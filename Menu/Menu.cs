@@ -24,14 +24,18 @@ namespace DinoDiner.Menu
         public static List<IMenuItem> Search(List<IMenuItem> menuItems, string term)
         {
             List<IMenuItem> results = new List<IMenuItem>();
+            IEnumerable<IMenuItem> query = menuItems.Where(item => item.ToString().IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0);
 
-            foreach (IMenuItem item in menuItems)
-            {
-                if (item.ToString().IndexOf(term, StringComparison.OrdinalIgnoreCase) >=0)
-                {
-                    results.Add(item);
-                }
-            }
+            foreach (IMenuItem item in query)
+                results.Add(item);
+
+            //foreach (IMenuItem item in menuItems)
+            //{
+            //    if (item.ToString().IndexOf(term, StringComparison.OrdinalIgnoreCase) >=0)
+            //    {
+            //        results.Add(item);
+            //    }
+            //}
             return results;
         }
 
