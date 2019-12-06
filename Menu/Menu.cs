@@ -48,18 +48,42 @@ namespace DinoDiner.Menu
         public static List<IMenuItem> FilterByCategory(List<IMenuItem> menuItems, List<string> category)
         {
             List<IMenuItem> results = new List<IMenuItem>();
+            IEnumerable<IMenuItem> query = null;
 
-            foreach (IMenuItem item in menuItems)
+
+            //foreach (IMenuItem item in menuItems)
+            //{
+            if (category.Contains("Combo"))// && item is CretaceousCombo)
             {
-                if (category.Contains("Combo") && item is CretaceousCombo)
-                    results.Add(item);
-                if (category.Contains("Entree") && item is Entree)
-                    results.Add(item);
-                if (category.Contains("Side") && item is Side)
-                    results.Add(item);
-                if (category.Contains("Drink") && item is Drink)
+                query = menuItems.OfType<CretaceousCombo>();
+                foreach (IMenuItem item in query)
                     results.Add(item);
             }
+
+            if (category.Contains("Entree"))// && item is Entree)
+            {
+                query = menuItems.OfType<Entree>();
+                foreach (IMenuItem item in query)
+                    results.Add(item);
+            }
+
+            if (category.Contains("Side"))// && item is Side)
+            {
+                query = menuItems.OfType<Side>();
+                foreach (IMenuItem item in query)
+                    results.Add(item);
+            }
+
+            if (category.Contains("Drink"))// && item is Drink)
+            {
+                query = menuItems.OfType<Drink>();
+                foreach (IMenuItem item in query)
+                    results.Add(item);
+
+            }
+            //}
+
+
             return results;
         }
 
@@ -123,7 +147,7 @@ namespace DinoDiner.Menu
                 results.Remove(r);
                 */
 
-            
+
             foreach (IMenuItem item in menuItems)
                 results.Add(item);
             for (int i = 0; i < results.Count; i++)
@@ -133,7 +157,7 @@ namespace DinoDiner.Menu
                     results.Remove(results[i]);
                 }
             }
-            
+
             return results;
         }
 
