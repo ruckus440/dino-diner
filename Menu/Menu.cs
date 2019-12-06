@@ -50,7 +50,6 @@ namespace DinoDiner.Menu
             List<IMenuItem> results = new List<IMenuItem>();
             IEnumerable<IMenuItem> query = null;
 
-
             //foreach (IMenuItem item in menuItems)
             //{
             if (category.Contains("Combo"))// && item is CretaceousCombo)
@@ -79,11 +78,8 @@ namespace DinoDiner.Menu
                 query = menuItems.OfType<Drink>();
                 foreach (IMenuItem item in query)
                     results.Add(item);
-
             }
             //}
-
-
             return results;
         }
 
