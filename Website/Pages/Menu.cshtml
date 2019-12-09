@@ -13,26 +13,34 @@
         {
             if (item is CretaceousCombo combo)
             {
-                <h3>@combo.ToString()</h3>
-
-                <table>
-                    <tr>
-                        <th>Size</th>
-                        <th>Price</th>
-                        <th>Calories</th>
-                    </tr>
-                    <tr>
-                        <td>@Size.Small.ToString()</td>
-                        <td></td>
-                    </tr>
-
-                    
-                </table>
                 <div class="menu-item">
-                    <h3>@combo.ToString(): </h3>
+                    <h3>@combo.ToString()</h3>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@Size.Small.ToString()</td>
+                            <td>@($"{combo.Price:C}")</td>
+                            <td>@combo.Calories</td>
+                        </tr>
+                        <@(combo.Size=Size.Medium) />
+                        <tr>
+                            <td>@Size.Medium.ToString()</td>
+                            <td>@($"{combo.Price:C}")</td>
+                            <td>@combo.Calories</td>
+                        </tr>
+                        <@(combo.Size=Size.Large) />
+                        <tr>
+                            <td>@Size.Large.ToString()</td>
+                            <td>@($"{combo.Price:C}")</td>
+                            <td>@combo.Calories</td>
+                        </tr>
+                    </table>
+
                     <p style="margin-left: 40px">
-                        Price: $@combo.Price<br />
-                        Calories: @combo.Calories<br />
                         Ingredients:
                         <ul>
                             @foreach (var ingredient in combo.Ingredients)
@@ -74,10 +82,33 @@
             if (item is Side side)
             {
                 <div class="menu-item">
-                    <h3>@side.ToString(): </h3>
+                    <h3>@side.ToString()</h3>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@Size.Small.ToString()</td>
+                            <td>@($"{side.Price:C}")</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                        <@(side.Size=Size.Medium) />
+                        <tr>
+                            <td>@Size.Medium.ToString()</td>
+                            <td>@($"{side.Price:C}")</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                        <@(side.Size=Size.Large) />
+                        <tr>
+                            <td>@Size.Large.ToString()</td>
+                            <td>@($"{side.Price:C}")</td>
+                            <td>@side.Calories</td>
+                        </tr>
+                    </table>
+
                     <p style="margin-left: 40px">
-                        Price: $@side.Price<br />
-                        Calories: @side.Calories<br />
                         Ingredients:
                         <ul>
                             @foreach (var ingredient in side.Ingredients)
@@ -98,10 +129,33 @@
             {
 
                 <div class="menu-item">
-                    <h3>@drink.ToString(): </h3>
+                    <h3>@drink.ToString()</h3>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Calories</th>
+                        </tr>
+                        <tr>
+                            <td>@Size.Small.ToString()</td>
+                            <td>@($"{drink.Price:C}")</td>
+                            <td>@drink.Calories</td>
+                        </tr>
+                        <@(drink.Size=Size.Medium) />
+                        <tr>
+                            <td>@Size.Medium.ToString()</td>
+                            <td>@($"{drink.Price:C}")</td>
+                            <td>@drink.Calories</td>
+                        </tr>
+                        <@(drink.Size=Size.Large) />
+                        <tr>
+                            <td>@Size.Large.ToString()</td>
+                            <td>@($"{drink.Price:C}")</td>
+                            <td>@drink.Calories</td>
+                        </tr>
+                    </table>
+
                     <p style="margin-left: 40px">
-                        Price: $@drink.Price<br />
-                        Calories: @drink.Calories<br />
                         Ingredients:
                         <ul>
                             @foreach (var ingredient in drink.Ingredients)
@@ -123,9 +177,9 @@
         <input type="submit" name="filter" id="filter" value="Apply Filters" />
 
         <h4>Menu Category</h4>
-        <div id="category" >
+        <div id="category">
             <label>
-                <input class="menu-category" type="checkbox" name="menuCategory" value="Combo"  checked="@Model.menuCategory.Contains("Combo")" />
+                <input class="menu-category" type="checkbox" name="menuCategory" value="Combo" checked="@Model.menuCategory.Contains("Combo")" />
                 Combo
             </label>
             <label>
@@ -146,20 +200,20 @@
         <div id="price">
             <label>
                 Min
-                <input type="number" min="0" max="10" step="0.01" name="minPrice" placeholder="$0.00" value="@Model.minPrice"/>
+                <input type="number" min="0" max="10" step="0.01" name="minPrice" placeholder="$0.00" value="@Model.minPrice" />
             </label>
             <label>
                 Max
-                <input type="number" min="0" max="10" step="0.01" name="maxPrice" placeholder="$0.00" value="@Model.maxPrice"/>
+                <input type="number" min="0" max="10" step="0.01" name="maxPrice" placeholder="$0.00" value="@Model.maxPrice" />
             </label>
         </div>
 
         <h4>Excluding Ingredients</h4>
         <div class="exclude-ingredient">
-            @foreach(string ingredient in Model.PossibleIngredients)
+            @foreach (string ingredient in Model.PossibleIngredients)
             {
                 <label>
-                    <input type="checkbox" name="ingredients" value="@ingredient" checked="@Model.ingredients.Contains(ingredient)" style="margin-bottom: 5px"/>
+                    <input type="checkbox" name="ingredients" value="@ingredient" checked="@Model.ingredients.Contains(ingredient)" style="margin-bottom: 5px" />
                     @ingredient
                 </label>
             }
