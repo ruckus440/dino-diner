@@ -49,6 +49,12 @@ namespace Website.Pages
         public List<string> ingredients { get; set; } = new List<string>();
 
         /// <summary>
+        /// Flags to hide headings
+        /// </summary>
+        public bool comboH2, sideH2, drinkH2, entreeH2 = false;
+        
+
+        /// <summary>
         /// Getter for possible ingredient HashSet
         /// </summary>
         public HashSet<string> PossibleIngredients { get { return menu.PossibleIngredients; } }
@@ -71,6 +77,7 @@ namespace Website.Pages
             list = Menu.AvailableMenuItems;
         }
 
+
         /// <summary>
         /// Functionality for search and filter options
         /// </summary>
@@ -85,6 +92,15 @@ namespace Website.Pages
                 list = Menu.FilterByPrice(list, minPrice, maxPrice);
             if (ingredients.Count != 0)
                 list = Menu.FilterByIngredients(list, ingredients);
+            if (!(list.OfType<CretaceousCombo>().Any()))
+                comboH2 = true;
+            if (!(list.OfType<Drink>().Any()))
+                drinkH2 = true;
+            if (!(list.OfType<Entree>().Any()))
+                entreeH2 = true;
+            if (!(list.OfType<Side>().Any()))
+                sideH2 = true;
+
         }
     }
 }

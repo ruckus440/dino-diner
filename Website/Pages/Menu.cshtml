@@ -8,7 +8,7 @@
 <div id="container">
     <div id="results">
         <h1>Menu</h1>
-        <h2>Combos</h2>
+        <h2 hidden="@Model.comboH2">Combos</h2>
         @foreach (var item in Model.list)
         {
             if (item is CretaceousCombo combo)
@@ -53,7 +53,7 @@
             }
         }
 
-        <h2>Entrees</h2>
+        <h2 hidden="@Model.entreeH2">Entrees</h2>
         @foreach (var item in Model.list)
         {
             if (item is Entree entree)
@@ -76,7 +76,7 @@
             }
         }
 
-        <h2>Sides</h2>
+        <h2 hidden="@Model.sideH2">Sides</h2>
         @foreach (var item in Model.list)
         {
             if (item is Side side)
@@ -122,7 +122,7 @@
 
         }
 
-        <h2>Drinks</h2>
+        <h2 hidden="@Model.drinkH2">Drinks</h2>
         @foreach (var item in Model.list)
         {
             if (item is Drink drink)

@@ -18,8 +18,15 @@ namespace DinoDiner.Menu
         private Side side;
         private Drink drink;
 
+        /// <summary>
+        /// Property changed event handler
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// Method to notify when a property changes
+        /// </summary>
+        /// <param name="propertyName"></param>
         public void NotifyOfPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -49,37 +49,35 @@ namespace DinoDiner.Menu
         {
             List<IMenuItem> results = new List<IMenuItem>();
             IEnumerable<IMenuItem> query = null;
-
-            //foreach (IMenuItem item in menuItems)
-            //{
-            if (category.Contains("Combo"))// && item is CretaceousCombo)
+            
+            if (category.Contains("Combo"))
             {
                 query = menuItems.OfType<CretaceousCombo>();
                 foreach (IMenuItem item in query)
                     results.Add(item);
             }
 
-            if (category.Contains("Entree"))// && item is Entree)
+            if (category.Contains("Entree"))
             {
                 query = menuItems.OfType<Entree>();
                 foreach (IMenuItem item in query)
                     results.Add(item);
             }
 
-            if (category.Contains("Side"))// && item is Side)
+            if (category.Contains("Side"))
             {
                 query = menuItems.OfType<Side>();
                 foreach (IMenuItem item in query)
                     results.Add(item);
             }
 
-            if (category.Contains("Drink"))// && item is Drink)
+            if (category.Contains("Drink"))
             {
                 query = menuItems.OfType<Drink>();
                 foreach (IMenuItem item in query)
                     results.Add(item);
             }
-            //}
+            
             return results;
         }
 
@@ -104,17 +102,7 @@ namespace DinoDiner.Menu
 
             foreach (IMenuItem item in query)
                 results.Add(item);
-            /*
-            foreach (IMenuItem item in menuItems)
-            {
-                if (minPrice.HasValue && maxPrice == null && item.Price >= minPrice)
-                    results.Add(item);
-                if (maxPrice.HasValue && minPrice == null && item.Price <= maxPrice)
-                    results.Add(item);
-                if (minPrice.HasValue && minPrice.HasValue && item.Price >= minPrice && item.Price <= maxPrice)
-                    results.Add(item);
-            }
-            */
+            
             return results;
         }
 
@@ -128,22 +116,7 @@ namespace DinoDiner.Menu
         public static List<IMenuItem> FilterByIngredients(List<IMenuItem> menuItems, List<string> ingredients)
         {
             List<IMenuItem> results = new List<IMenuItem>();
-            /*
-            foreach (IMenuItem item in menuItems)
-                results.Add(item);
-            IEnumerable<IMenuItem> query = null;
-            List<IMenuItem> qToList = null;
-
-            foreach (string ingredient in ingredients)
-            {
-                query = menuItems.Where(item => (item.Ingredients.Contains(ingredient)));
-                qToList = query.ToList();
-            }
-            foreach (IMenuItem r in qToList)
-                results.Remove(r);
-                */
-
-
+            
             foreach (IMenuItem item in menuItems)
                 results.Add(item);
             for (int i = 0; i < results.Count; i++)
@@ -153,7 +126,6 @@ namespace DinoDiner.Menu
                     results.Remove(results[i]);
                 }
             }
-
             return results;
         }
 
