@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DinoDiner.Menu.Drink" Collapsed="true">
+    <Position X="3.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAoQAggAAAAAAAACAAgAAAAAAAAAAACAAAQAA=</HashCode>
+      <FileName>Drinks\Drink.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DinoDiner.Menu.JurassicJava" Collapsed="true">
+    <Position X="2.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACQAAAAggAAEAIBIACACCAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Drinks\JurassicJava.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Sodasaurus" Collapsed="true">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIACAACAAggAAEAIAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Drinks\SodaSaurus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Tyrannotea" Collapsed="true">
+    <Position X="7.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAggAAEAIAAACAAAAgAAAAAAAAAAIAAEAA=</HashCode>
+      <FileName>Drinks\Tyrannotea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Water" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAggAAEAIAAACAAAAAAAAAAAAAAAIAAEAA=</HashCode>
+      <FileName>Drinks\Water.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Brontowurst" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACABAAAgAAAEAAAAACAAAEAAAQAAAIAEAACAAAE=</HashCode>
+      <FileName>Entrees\Brontowurst.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.DinoNuggets" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACCAAAAAgAAAEAAAAACAAAAAEAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Entrees\DinoNuggets.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Entree" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAgQAgAAAAAAAAACAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entrees\Entree.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DinoDiner.Menu.PrehistoricPBJ" Collapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECAAAAAhAAAEAAAAACAAAAQAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entrees\PrehistoricPBJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.PterodactylWings" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAgAAAEAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entrees\PterodactylWings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.SteakosaurusBurger" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAiAAAkAAAEIAAAACAAAAAAAAAAAIAAQBAAAAA=</HashCode>
+      <FileName>Entrees\SteakosaurusBurger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.TRexKingBurger" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAjAAAkAAIEIAAAACAAAEBAAAAEAoAEQBAAAAg=</HashCode>
+      <FileName>Entrees\TRexKingBurger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.VelociWrap" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAECAAAACgAAIEAAAAACAIAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entrees\VelociWrap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Fryceritops" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAggAAEAIAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\Fryceritops.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.MeteorMacAndCheese" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAggAAEAIAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\MeteorMacAndCheese.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.MezzorellaSticks" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAggAAEAIAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\MezzorellaSticks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Side" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAoQAggAAAAAAAACAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\Side.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DinoDiner.Menu.Triceritots" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAggAAEAIAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sides\Triceritots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.CretaceousCombo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAoQgogAANAIAAASAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CretaceousCombo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DinoDiner.Menu.Menu" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgAAQAAAAAAAEAAIAAEAAAAAIAAAAAAAIgIAgAAA=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DinoDiner.Menu.Order" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAAAAACAABIAgABAAAwAAAAhAAQAAAAAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="DinoDiner.Menu.IMenuItem" Collapsed="true">
+    <Position X="16.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAQAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IMenuItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="DinoDiner.Menu.IOrderItem" Collapsed="true">
+    <Position X="18.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IOrderItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DinoDiner.Menu.SodasaurusFlavor" Collapsed="true">
+    <Position X="18.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAARAAAAAAAgAAAAAAQAAAAAAAAAgBAAA=</HashCode>
+      <FileName>Drinks\SodasaurusFlavor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DinoDiner.Menu.Size" Collapsed="true">
+    <Position X="16.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Size.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
